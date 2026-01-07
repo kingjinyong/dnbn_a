@@ -38,7 +38,10 @@ export default function PurchaseScreen() {
   };
 
   return (
-    <View style={[styles.container, { paddingTop: insets.top }]}>
+    <View style={styles.container}>
+            {insets.top > 0 && (
+                <View style={{ height: insets.top, backgroundColor: '#FFFFFF' }} />
+            )}
       <View style={styles.headerContainer}>
         <Pressable onPress={() => router.back()} style={styles.backButton}>
           <Ionicons name="chevron-back" size={24} color="#000" />
@@ -308,6 +311,9 @@ export default function PurchaseScreen() {
           </View>
         </Pressable>
       </Modal>
+            {insets.bottom > 0 && (
+                <View style={{ height: insets.bottom, backgroundColor: '#000' }} />
+            )}
     </View>
   );
 }

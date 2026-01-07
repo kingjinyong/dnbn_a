@@ -1,30 +1,30 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   header: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: 20,
-        backgroundColor: '#fff',
-    },
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: 20,
+    backgroundColor: "#fff",
+  },
   backButton: {
-      width: 44,
-      height: 44,
-      justifyContent: 'center',
-      alignItems: 'flex-start',
+    width: 44,
+    height: 44,
+    justifyContent: "center",
+    alignItems: "flex-start",
   },
   title: {
-      fontSize: 18,
-      fontWeight: 'bold',
-      color: '#333',
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      textAlign: 'center',
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#333",
+    position: "absolute",
+    left: 0,
+    right: 0,
+    textAlign: "center",
   },
   placeholder: {
-      width: 40,
+    width: 40,
   },
   searchView: {
     flex: 1,
@@ -46,31 +46,31 @@ export const styles = StyleSheet.create({
     width: 300,
     borderBottomWidth: 1,
     opacity: 1,
-    outline: 'none',
-    flex: 1
+    outline: "none",
+    flex: 1,
   },
   searchButton: {
-    marginLeft:10,
+    marginLeft: 10,
     justifyContent: "center",
     alignItems: "center",
   },
   searchButtonText: {
-    padding:10,
+    padding: 10,
     borderWidth: 1,
     borderRadius: 3,
-    color: "black"
+    color: "black",
   },
   recentSearchContainer: {
     marginBottom: 10,
   },
   recentSearchKeywordText: {
-    marginBottom:10
+    marginBottom: 10,
   },
   recentSearchKeyword: {
     flexDirection: "row",
     borderRadius: 10,
     backgroundColor: "#F2F2F2",
-    margin:5,
+    margin: 5,
     padding: 5,
   },
   deleteButton: {
@@ -83,7 +83,7 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   recommendProductText: {
-    marginBottom:10
+    marginBottom: 10,
   },
   products: {
     marginBottom: 10,
@@ -96,20 +96,20 @@ export const styles = StyleSheet.create({
     backgroundColor: "white",
     width: 90,
     height: 70,
-    justifyContent:"center",
+    justifyContent: "center",
     alignItems: "center",
     borderRadius: 5,
-    },
+  },
   priceInfo: {
-    flexDirection: "row"
+    flexDirection: "row",
   },
   reviewInfo: {
     flexDirection: "row",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   reviewStar: {
     width: 13,
     height: 13,
   },
-})
+});

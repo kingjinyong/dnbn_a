@@ -1,8 +1,6 @@
 import { StyleSheet } from "react-native"
 
 export const styles = StyleSheet.create({
-
-
   header: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -29,54 +27,71 @@ export const styles = StyleSheet.create({
       width: 40,
   },
 
-
-  line: {
-    borderWidth: 1,
-    borderColor: "#0000000e",
-  },
-
-
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "white"
   },
-  notificationContainer: {
+  giftBoxContainer: {
     flex: 1,
-    margin: 20,
   },
-  notificationContent: {
+  notUsedAndUsedTab: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    height: 50,
+  },
+  activeTab: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: 195,
+    height: 50,
+    borderBottomWidth: 1,
+    borderBottomColor: "orange",
+  },
+  inActiveTab: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: 195,
+    height: 50,
+    borderBottomWidth: 1,
+    borderBottomColor: "white",
+  },
+  tabText: {
+    color: "black",
+  },
+  giftContainer: {
+    marginTop: 15,
+    marginLeft: 15,
+    marginRight: 15,
+    flex: 1,
+  },
+  infoContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    // borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: "#efefefff",
-    paddingTop: 12,
-    paddingBottom: 12
+    height: 30,
   },
-
-
-
-
-
-  // 토글 스타일
-
-  toggle: {
-    width: 50,
-    height: 26,
-    borderRadius: 13,
-    backgroundColor: '#d1d1d1',
-    justifyContent: 'center',
-    padding: 2,
+  countText: {
+    justifyContent: "center",
+    alignItems: "center"
   },
-  toggleOn: {
-    backgroundColor: '#FF6F2B',
+  products: {
+    flex: 1,
+    marginBottom: 10,
   },
-  circle: {
-    width: 22,
-    height: 22,
-    borderRadius: 11,
-    backgroundColor: '#ffffff',
+  productImage: {
+    backgroundColor: "white",
+    justifyContent: "center",
+    alignItems: "center",
+    width: '100%',
+    borderRadius: 5,
+    resizeMode: 'contain',
   },
-
+  notUsedAndUsedText: {
+    fontWeight: "bold"
+  },
+  date: {
+    fontSize: 12,
+    color: "#969696"
+  },
 })
