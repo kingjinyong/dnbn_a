@@ -14,7 +14,10 @@ export default function PracticeView() {
   ]
 
   return (
-    <View style={[styles.practiceView, {paddingTop: insets.top}]}>
+    <View style={styles.practiceView}>
+      {insets.top > 0 && (
+        <View style={{ height: insets.top, backgroundColor: "#FFFFFF"}} />
+      )}
       <View style={styles.inputContainer}>
           <View style={styles.viewMargin}>
             <Text style={styles.welcome}>동네방네에 오신 것을 환영합니다.</Text>
@@ -105,6 +108,9 @@ export default function PracticeView() {
           <Text style={styles.registButtonText}>회원가입</Text>
         </Pressable>
     </View>
+    {insets.bottom > 0 && (
+        <View style={{ height: insets.bottom, backgroundColor: "#000"}} />
+      )}
   </View >
   );
 }

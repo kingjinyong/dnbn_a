@@ -12,9 +12,12 @@ export default function AddressScreen() {
         { id: '2', label: '회사', details: '경기도 성남시 분당구 판교로 456', recipient: '김철수', phone: '010-8765-4321' },
     ];
   return (
-    <ScrollView style={[styles.container, { paddingTop: insets.top }]}>
+    <ScrollView style={styles.container}>
+      {insets.top > 0 && (
+        <View style={{ height: insets.top, backgroundColor: "#FFFFFF"}} />
+      )}
       <View style={styles.header}>
-        <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+        <TouchableOpacity style={styles.backButton} onPress={() => router.navigate("/(cust)/tabs/custhome")}>
             <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
         <Text style={styles.title} pointerEvents="none">내 위치 설정</Text>
@@ -40,6 +43,9 @@ export default function AddressScreen() {
 
         )}></FlatList>
       </View>
+      {insets.bottom > 0 && (
+        <View style={{ height: insets.bottom, backgroundColor: "#000"}} />
+      )}
     </ScrollView>
   );
 }

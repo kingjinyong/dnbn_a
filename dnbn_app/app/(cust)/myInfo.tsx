@@ -14,8 +14,11 @@ export default function MyInfoScreen() {
     const insets = useSafeAreaInsets();
 
     return (
-        <View style={[styles.container, { paddingTop: insets.top }]}>
-            {/* 헤더 */}
+        <View style={styles.container}>
+            {insets.top > 0 && (
+                <View style={{ height: insets.top, backgroundColor: '#ffffff'}} />
+            )}
+
             <View style={styles.headerContainer}>
                 <Pressable style={styles.headerBackButton}>
                     <Ionicons name="chevron-back" size={24} color="#000" />
@@ -86,6 +89,11 @@ export default function MyInfoScreen() {
             <Pressable style={styles.myInfoSaveButton}>
                 <Text style={styles.myInfoSaveButtonText}>정보 수정하기</Text>
             </Pressable>
+
+            {/* 하단 Safe Area - 색상 지정 가능 */}
+            {insets.bottom > 0 && (
+                <View style={{ height: insets.bottom, backgroundColor: '#000' }} />
+            )}
 
             {/* 비밀번호 변경 모달 */}
             <Modal

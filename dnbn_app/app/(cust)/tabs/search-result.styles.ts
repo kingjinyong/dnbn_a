@@ -1,6 +1,31 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: 20,
+    backgroundColor: "#fff",
+  },
+  backButton: {
+    width: 44,
+    height: 44,
+    justifyContent: "center",
+    alignItems: "flex-start",
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#333",
+    position: "absolute",
+    left: 0,
+    right: 0,
+    textAlign: "center",
+  },
+  placeholder: {
+    width: 40,
+  },
   searchResultView: {
     flex: 1,
     backgroundColor: "white",
@@ -12,7 +37,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
-    height: 50
+    height: 50,
   },
   activeTab: {
     justifyContent: "center",
@@ -38,12 +63,12 @@ export const styles = StyleSheet.create({
     marginTop: 15,
     marginLeft: 15,
     marginRight: 15,
-    flex: 1
+    flex: 1,
   },
   infoContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 10
+    marginBottom: 10,
   },
   products: {
     marginBottom: 10,
@@ -56,17 +81,17 @@ export const styles = StyleSheet.create({
     backgroundColor: "white",
     width: 90,
     height: 70,
-    justifyContent:"center",
+    justifyContent: "center",
     alignItems: "center",
     borderRadius: 5,
-    },
+  },
   priceInfo: {
-    flexDirection: "row"
+    flexDirection: "row",
   },
   reviewInfo: {
     flexDirection: "row",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   reviewStar: {
     width: 13,
@@ -83,8 +108,8 @@ export const styles = StyleSheet.create({
     backgroundColor: "white",
     width: 90,
     height: 70,
-    justifyContent:"center",
+    justifyContent: "center",
     alignItems: "center",
     borderRadius: 5,
   },
-})
+});

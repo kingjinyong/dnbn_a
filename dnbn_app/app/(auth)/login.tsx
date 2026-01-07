@@ -1,17 +1,13 @@
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  TextInput,
-  Image,
-} from "react-native";
+import { Text, View, TouchableOpacity, TextInput, Image } from "react-native";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { styles } from "./login.styles";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function LoginScreen() {
   const router = useRouter();
   const [userType, setUserType] = useState<"cust" | "store">("cust");
+  const insets = useSafeAreaInsets();
 
   const handleLogin = (type: "cust" | "store") => {
     if (type === "cust") {
@@ -28,10 +24,15 @@ export default function LoginScreen() {
   };
 
   return (
-    <View style={styles.container}>
-      <Image style={styles.logo} source={require("@/assets/images/logo.png")} />
+      <View style={styles.container}>
+      {insets.top > 0 && (
+        <View style={{ height: insets.top, backgroundColor: "#FFFFFF"}} />
+      )}
 
-      <View style={styles.typeSelector}>
+      <View style={styles.contentContainer}>
+        <Image style={styles.logo} source={require("@/assets/images/logo.png")} />
+
+        <View style={styles.typeSelector}>
         <TouchableOpacity
           style={[
             styles.typeButton,
@@ -98,7 +99,8 @@ export default function LoginScreen() {
         {userType === "cust" && (
           <>
             <View style={styles.separator} />
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => router.push("/(auth)/signup")}>
               <Text style={styles.linkText}>회원가입</Text>
             </TouchableOpacity>
           </>
@@ -121,8 +123,11 @@ export default function LoginScreen() {
           </TouchableOpacity>
         </View>
       )}
+      </View>
+
+      {insets.bottom > 0 && (
+        <View style={{ height: insets.bottom, backgroundColor: "#000" }} />
+      )}
     </View>
   );
 }
-
-
