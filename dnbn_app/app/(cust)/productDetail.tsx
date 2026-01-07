@@ -16,14 +16,14 @@ export default function ProductDetailScreen() {
     };
 
     return (
-        <View style={[styles.screenContainer, { paddingTop: insets.top }]}>
-            <View style={styles.header}>
-                <TouchableOpacity
-                    style={styles.backButton}
-                    onPress={() => router.back()}
-                >
+        <View style={styles.screenContainer}>
+            {insets.top > 0 && (
+        <View style={{ height: insets.top, backgroundColor: "#FFFFFF"}} />
+      )}
+            <View style={styles.headerContainer}>
+                <Pressable onPress={() => router.back()} style={styles.backButton}>
                     <Ionicons name="chevron-back" size={24} color="#000" />
-                </TouchableOpacity>
+                </Pressable>
                 <Text style={styles.title} pointerEvents="none">
                     내 위치 설정
                 </Text>
@@ -172,6 +172,10 @@ export default function ProductDetailScreen() {
             <Pressable style={styles.scrollToTopButton} onPress={scrollToTop}>
                 <Text style={styles.scrollToTopButtonText}>▲</Text>
             </Pressable>
+
+            {insets.bottom > 0 && (
+        <View style={{ height: insets.bottom, backgroundColor: "#000"}} />
+      )}
         </View>
     );
 }

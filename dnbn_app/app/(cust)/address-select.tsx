@@ -1,8 +1,11 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
+import { Text, View, TextInput, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
+import { styles } from "./address-select.styles";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function AddressSelectScreen() {
     const router = useRouter();
+    const insets = useSafeAreaInsets();
     
     const handleSelect = () => {
         router.back();
@@ -10,6 +13,9 @@ export default function AddressSelectScreen() {
     
     return (
         <View style={styles.container}>
+            {insets.top > 0 && (
+        <View style={{ height: insets.top, backgroundColor: "#FFFFFF"}} />
+      )}
             <Text style={styles.title}>주소 선택</Text>
             
             <TextInput
@@ -21,40 +27,10 @@ export default function AddressSelectScreen() {
             <TouchableOpacity style={styles.selectButton} onPress={handleSelect}>
                 <Text style={styles.selectButtonText}>선택 완료</Text>
             </TouchableOpacity>
+            {insets.bottom > 0 && (
+        <View style={{ height: insets.bottom, backgroundColor: "#000"}} />
+      )}
         </View>
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#F5F5F5',
-        padding: 20,
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 20,
-        color: '#333',
-    },
-    input: {
-        backgroundColor: '#fff',
-        padding: 15,
-        borderRadius: 8,
-        fontSize: 16,
-        marginBottom: 20,
-        borderWidth: 1,
-        borderColor: '#ddd',
-    },
-    selectButton: {
-        backgroundColor: '#007AFF',
-        padding: 15,
-        borderRadius: 8,
-        alignItems: 'center',
-    },
-    selectButtonText: {
-        color: '#fff',
-        fontSize: 16,
-        fontWeight: '600',
-    },
-});
