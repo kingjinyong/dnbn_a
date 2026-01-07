@@ -21,7 +21,7 @@ export default function ProductDetailScreen() {
                 <Pressable onPress={() => router.back()} style={styles.backButton}>
                     <Ionicons name="chevron-back" size={24} color="#000" />
                 </Pressable>
-                <Text style={styles.headerTitleText}>장바구니</Text>
+                <Text style={styles.headerTitleText}>상품 이름 들어가야함</Text>
             </View>
             <ScrollView ref={scrollViewRef} style={styles.container} showsVerticalScrollIndicator={false}>
                 <View style={styles.productDetailImgContainer}>

@@ -6,6 +6,8 @@ export const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     headerContainer: {
+        width: '100%',
+        backgroundColor: '#fff',
         height: 56,
         flexDirection: 'row',
         alignItems: 'center',
@@ -53,27 +55,27 @@ export const styles = StyleSheet.create({
         color: '#999',
         marginBottom: 4,
     },
-    productSaleRateText:{
+    productSaleRateText: {
         fontSize: 13,
         color: '#EF7810',
         lineHeight: 18,
     },
-    productDetailPriceContainer:{
+    productDetailPriceContainer: {
         marginTop: 4,
         flexDirection: 'row',
         alignItems: 'center',
         gap: 6,
     },
-    productSalePriceText:{
+    productSalePriceText: {
         fontSize: 13,
         color: '#999',
         lineHeight: 18,
         textDecorationLine: 'line-through',
     },
-    productLeftQuantityText:{
+    productLeftQuantityText: {
         fontSize: 13,
         color: '#333',
-        lineHeight: 18, 
+        lineHeight: 18,
     },
     productDetailMapContainer: {
         flexDirection: 'row',
@@ -166,7 +168,7 @@ export const styles = StyleSheet.create({
         color: '#EF7810',
         fontWeight: '600',
     },
-    productDetailProductInfoText:{
+    productDetailProductInfoText: {
         fontSize: 13,
         color: '#333',
     },
@@ -276,11 +278,11 @@ export const styles = StyleSheet.create({
         color: '#999',
         lineHeight: 15,
     },
-    productDetailTabContainer:{
+    productDetailTabContainer: {
         paddingHorizontal: 16,
         paddingVertical: 16,
     },
-    productDetailTabText:{
+    productDetailTabText: {
         fontSize: 13,
         color: '#333',
         lineHeight: 18,
