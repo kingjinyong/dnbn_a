@@ -10,7 +10,10 @@ export default function NoticeScreen() {
     const scrollViewRef = useRef<ScrollView>(null);
 
     return (
-        <View style={[styles.container, { paddingTop: insets.top }]}>
+        <View style={styles.container}>
+            {insets.top > 0 && (
+        <View style={{ height: insets.top, backgroundColor: "#FFFFFF"}} />
+      )}
             <View style={styles.headerContainer}>
                 <Pressable onPress={() => router.back()} style={styles.backButton}>
                     <Ionicons name="chevron-back" size={24} color="#000" />
@@ -111,6 +114,9 @@ export default function NoticeScreen() {
                     <Ionicons name="chevron-forward" size={20} color="#EF7810" />
                 </Pressable>
             </ScrollView>
+            {insets.bottom > 0 && (
+        <View style={{ height: insets.bottom, backgroundColor: "#000"}} />
+      )}
         </View>
     );
 }

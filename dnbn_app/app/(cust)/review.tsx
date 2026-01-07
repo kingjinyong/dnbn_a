@@ -10,11 +10,14 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { styles } from "./review.styles";
 import React from "react";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function CustReviewListScreen() {
   const [selectedTab, setSelectedTab] = React.useState<"written" | "unwritten">(
     "written"
   );
+
+  const insets = useSafeAreaInsets();
 
   const writtenReviews = [
     {
@@ -40,6 +43,9 @@ export default function CustReviewListScreen() {
 
   return (
     <View style={styles.container}>
+      {insets.top > 0 && (
+        <View style={{ height: insets.top, backgroundColor: "#FFFFFF" }} />
+      )}
       <View style={styles.header}>
         <TouchableOpacity
           style={styles.backButton}
@@ -53,29 +59,37 @@ export default function CustReviewListScreen() {
         <View style={styles.placeholder} />
       </View>
       <View style={styles.topnav}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={[
-            styles.topNavTab, 
-            selectedTab === "written" && { borderBottomWidth: 1, borderBottomColor: "#FF6B35" },
-            selectedTab === "unwritten" && { borderBottomWidth: 1, borderBottomColor: "#ccc" }
+            styles.topNavTab,
+            selectedTab === "written" && {
+              borderBottomWidth: 1,
+              borderBottomColor: "#FF6B35",
+            },
+            selectedTab === "unwritten" && {
+              borderBottomWidth: 1,
+              borderBottomColor: "#ccc",
+            },
           ]}
           onPress={() => setSelectedTab("written")}
         >
-          <Text style={styles.topnavText}>
-            작성 리뷰
-          </Text>
+          <Text style={styles.topnavText}>작성 리뷰</Text>
         </TouchableOpacity>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={[
             styles.topNavTab,
-            selectedTab === "unwritten" && { borderBottomWidth: 1, borderBottomColor: "#FF6B35" },
-            selectedTab === "written" && { borderBottomWidth: 1, borderBottomColor: "#ccc" }
+            selectedTab === "unwritten" && {
+              borderBottomWidth: 1,
+              borderBottomColor: "#FF6B35",
+            },
+            selectedTab === "written" && {
+              borderBottomWidth: 1,
+              borderBottomColor: "#ccc",
+            },
           ]}
           onPress={() => setSelectedTab("unwritten")}
         >
-          <Text style={styles.topnavText}>
-            미작성 리뷰
-          </Text>
+          <Text style={styles.topnavText}>미작성 리뷰</Text>
         </TouchableOpacity>
       </View>
       <ScrollView style={styles.reviewContainer}>
@@ -93,20 +107,35 @@ export default function CustReviewListScreen() {
               {selectedTab === "written" ? (
                 <View style={{ flexDirection: "row" }}>
                   {/* 사진 */}
-                  <Image 
-                    source={item.uri} 
-                    style={{ width: 60, height: 60, borderRadius: 8, marginRight: 15 }}
+                  <Image
+                    source={item.uri}
+                    style={{
+                      width: 60,
+                      height: 60,
+                      borderRadius: 8,
+                      marginRight: 15,
+                    }}
                     resizeMode="cover"
                   />
-                  
+
                   <View style={{ flex: 1 }}>
-                    <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 5 }}>
+                    <Text
+                      style={{
+                        fontSize: 16,
+                        fontWeight: "bold",
+                        marginBottom: 5,
+                      }}
+                    >
                       {item.store}
                     </Text>
-                    <Text style={{ fontSize: 14, color: "#555", marginBottom: 5 }}>
+                    <Text
+                      style={{ fontSize: 14, color: "#555", marginBottom: 5 }}
+                    >
                       평점: {item.rating}점 ⭐
                     </Text>
-                    <Text style={{ fontSize: 14, color: "#333", lineHeight: 20 }}>
+                    <Text
+                      style={{ fontSize: 14, color: "#333", lineHeight: 20 }}
+                    >
                       {item.comment}
                     </Text>
                   </View>
@@ -125,6 +154,9 @@ export default function CustReviewListScreen() {
           )}
         />
       </ScrollView>
+      {insets.bottom > 0 && (
+        <View style={{ height: insets.bottom, backgroundColor: "#000" }} />
+      )}
     </View>
   );
 }
