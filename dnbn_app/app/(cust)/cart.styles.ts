@@ -1,22 +1,20 @@
 import { StyleSheet } from 'react-native';
-
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#ffffffff',
     },
-    header: {
+    headerContainer: {
+        height: 56,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: 20,
-        backgroundColor: '#fff',
+        justifyContent: 'center',
+        position: 'relative',
     },
     backButton: {
-        width: 44,
-        height: 44,
-        justifyContent: 'center',
-        alignItems: 'flex-start',
+        position: 'absolute',
+        left: 16,
+        padding: 8,
     },
     title: {
         fontSize: 18,
@@ -38,7 +36,7 @@ export const styles = StyleSheet.create({
         paddingVertical: 6,
         paddingHorizontal: 16,
         borderBottomWidth: 1,
-        borderBottomColor: '#f0f0f0',
+        borderBottomColor: '#F0F0F0',
     },
     cartTopLeftSection: {
         flexDirection: 'row',
@@ -68,7 +66,7 @@ export const styles = StyleSheet.create({
         color: '#666',
     },
     cartTopDivider: {
-        color: '#d0d0d0',
+        color: '#D0D0D0',
         fontSize: 14,
         marginHorizontal: 4,
     },
@@ -77,7 +75,7 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 1,
         marginVertical: 8,
         marginHorizontal: 12,
-        borderBottomColor: '#f0f0f0',
+        borderBottomColor: '#F0F0F0',
     },
     cartStoreInfoContainer: {
         flexDirection: 'row',
@@ -137,7 +135,7 @@ export const styles = StyleSheet.create({
         paddingVertical: 4,
         paddingHorizontal: 8,
         borderWidth: 1,
-        borderColor: '#e0e0e0',
+        borderColor: '#E0E0E0',
         borderRadius: 4,
         width: 70,
         justifyContent: 'center',
@@ -203,7 +201,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 16,
         backgroundColor: '#fff',
         borderTopWidth: 1,
-        borderTopColor: '#e0e0e0',
+        borderTopColor: '#E0E0E0',
     },
     purchaseSummaryRow: {
         flexDirection: 'row',

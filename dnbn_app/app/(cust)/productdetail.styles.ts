@@ -5,18 +5,19 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
-header: {
+    headerContainer: {
+        width: '100%',
+        backgroundColor: '#fff',
+        height: 56,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: 20,
-        backgroundColor: '#fff',
+        justifyContent: 'center',
+        position: 'relative',
     },
     backButton: {
-        width: 44,
-        height: 44,
-        justifyContent: 'center',
-        alignItems: 'flex-start',
+        position: 'absolute',
+        left: 16,
+        padding: 8,
     },
     title: {
         fontSize: 18,
