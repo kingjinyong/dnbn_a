@@ -1,4 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import { useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -15,6 +16,18 @@ export default function Mypage() {
 
   return (
     <View style={[styles.mypageViewContainer, { paddingTop: insets.top }]}>
+      <View style={styles.header}>
+          <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => router.push('/tabs/search')}
+          >
+          <Ionicons name="chevron-back" size={24} color="#000" />
+          </TouchableOpacity>
+          <Text style={styles.title} pointerEvents="none">
+          마이페이지
+          </Text>
+          <View style={styles.placeholder} />
+      </View>
 
       <ScrollView style={styles.mypageView} showsVerticalScrollIndicator={false}>
         <View style={styles.infoContainer}>

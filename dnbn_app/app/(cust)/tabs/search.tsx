@@ -1,7 +1,7 @@
 import Ionicons from '@expo/vector-icons/build/Ionicons';
 import { router } from 'expo-router';
 import React, { useState } from 'react';
-import { FlatList, Image, Pressable, Text, TextInput, View } from 'react-native';
+import { FlatList, Image, Pressable, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { styles } from './search.styles';
 
@@ -40,7 +40,20 @@ export default function SearchView() {
     ]
 
     return (
-        <View style={[styles.searchView, {paddingTop: insets.top}]}>
+        <View style={[styles.searchView, { paddingTop: insets.top }]}>
+            
+            <View style={styles.header}>
+                <TouchableOpacity
+                style={styles.backButton}
+                onPress={() => router.push('/tabs/search')}
+                >
+                <Ionicons name="chevron-back" size={24} color="#000" />
+                </TouchableOpacity>
+                <Text style={styles.title} pointerEvents="none">
+                검색
+                </Text>
+                <View style={styles.placeholder} />
+            </View>
 
         <View style={styles.searchContainer}>
             <View style={styles.searchBarContainer}>
@@ -52,7 +65,7 @@ export default function SearchView() {
                 onBlur={() => setIsFocused(false)}
                     />
                     {/* 여기 search-result로 라우팅 되어야함. */}
-            <Pressable onPress={() => router.push('/tabs/search-result')} style={styles.searchButton}>
+            <Pressable onPress={() => router.navigate('/tabs/search-result')} style={styles.searchButton}>
                 <Text style={styles.searchButtonText}>검색</Text>
             </Pressable>
             </View>

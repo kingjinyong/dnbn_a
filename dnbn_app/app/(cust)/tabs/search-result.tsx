@@ -1,8 +1,9 @@
+import Ionicons from '@expo/vector-icons/build/Ionicons';
+import { router } from 'expo-router';
 import React, { useState } from 'react';
-import { FlatList, Image, Pressable, Text, View } from 'react-native';
+import { FlatList, Image, Pressable, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { styles } from './search-result.styles';
-import Ionicons from '@expo/vector-icons/build/Ionicons';
 
 export default function SearchView() {
   const insets = useSafeAreaInsets();
@@ -54,6 +55,20 @@ export default function SearchView() {
   return (
     <View style={[styles.searchResultView, {paddingTop: insets.top}]}>
 
+      <View style={styles.header}>
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => router.push('/tabs/search')}
+        >
+          <Ionicons name="chevron-back" size={24} color="#000" />
+        </TouchableOpacity>
+        <Text style={styles.title} pointerEvents="none">
+          검색 결과
+        </Text>
+        <View style={styles.placeholder} />
+      </View>
+      
+      
       <View style={styles.productResultContainer}>
         <View style={styles.productAndStoreTab}>
         <Pressable
