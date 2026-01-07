@@ -73,6 +73,14 @@ export default function CustLayout() {
         }}
       />
       <Stack.Screen
+        name="gift-box"
+        options={{
+          title: "선물함",
+          headerShown: false,
+          headerTitle: "선물함",
+        }}
+      />
+      <Stack.Screen
         name="notice"
         options={{
           title: "공지사항",

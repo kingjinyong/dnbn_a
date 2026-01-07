@@ -46,7 +46,8 @@ export default function Mypage() {
               <Ionicons name="chevron-forward" size={24} color="black" />
             </View>
             <View style={styles.contentContainer}>
-              <Text style={styles.contentText}>선물함</Text>
+              <Text style={styles.contentText}
+                onPress={() => router.push('/gitf-box')}>선물함</Text>
               <Ionicons name="chevron-forward" size={24} color="black" />
             </View>
             <View style={styles.contentContainer}>
