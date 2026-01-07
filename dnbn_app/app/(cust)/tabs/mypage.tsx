@@ -57,10 +57,11 @@ export default function Mypage() {
               <Text style={styles.contentText}>카테고리 설정</Text>
               <Ionicons name="chevron-forward" size={24} color="black" />
             </View>
-            <View style={styles.contentContainer}>
+            <TouchableOpacity style={styles.contentContainer}
+              onPress={() => router.push('/notifications')}>
               <Text style={styles.contentText}>알림 설정</Text>
               <Ionicons name="chevron-forward" size={24} color="black" />
-            </View>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.line}></View>
@@ -74,10 +75,10 @@ export default function Mypage() {
               <Text style={styles.contentText}>문의</Text>
               <Ionicons name="chevron-forward" size={24} color="black" />
             </View>
-            <View style={styles.contentContainer}>
+            <TouchableOpacity style={styles.contentContainer}>
               <Text style={styles.contentText}>신고</Text>
               <Ionicons name="chevron-forward" size={24} color="black" />
-            </View>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.line}></View>
@@ -91,10 +92,10 @@ export default function Mypage() {
         </View>
 
         <View style={styles.dnbnInfoContainer}>
-          <TouchableOpacity onPress={() => changeArrow()} style={{flexDirection:"row"}}>
+          <View onPress={() => changeArrow()} style={{flexDirection:"row"}}>
               <Text style={styles.sectionTitle}>동네방네</Text>
               <Ionicons name={openInfo ? "chevron-down" : "chevron-up"} size={18} color="black"></Ionicons>
-            </TouchableOpacity>
+            </View>
                       
           <View style={styles.textBlock}>
             <Text style={styles.regularText}>
