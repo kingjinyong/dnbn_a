@@ -6,30 +6,39 @@ export const styles = StyleSheet.create({
         backgroundColor: '#ffffffff',
     },
     headerContainer: {
-        height: 56,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
+        justifyContent: 'space-between',
+        padding: 20,
+        backgroundColor: '#fff',
     },
     backButton: {
-        position: 'absolute',
-        left: 16,
-        padding: 8,
+        width: 44,
+        height: 44,
+        justifyContent: 'center',
+        alignItems: 'flex-start',
     },
-    headerTitleText: {
+    title: {
         fontSize: 18,
-        fontWeight: '600',
+        fontWeight: 'bold',
+        color: '#333',
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        textAlign: 'center',
+    },
+    placeholder: {
+        width: 40,
     },
     cartTopContainer: {
         backgroundColor: '#fff',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingVertical: 6,
         paddingHorizontal: 16,
+        paddingBottom: 15,
         borderBottomWidth: 1,
-        borderBottomColor: '#f0f0f0',
+        borderBottomColor: '#F0F0F0',
     },
     cartTopLeftSection: {
         flexDirection: 'row',
@@ -40,7 +49,7 @@ export const styles = StyleSheet.create({
         fontSize: 14,
     },
     cartTopSelectAllText: {
-        fontSize: 12,
+        fontSize: 18,
         fontWeight: '600',
         color: '#333',
     },
@@ -54,12 +63,12 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 8,
     },
     cartTopDeleteButtonText: {
-        fontSize: 12,
+        fontSize: 18,
         fontWeight: '400',
         color: '#666',
     },
     cartTopDivider: {
-        color: '#d0d0d0',
+        color: '#D0D0D0',
         fontSize: 14,
         marginHorizontal: 4,
     },
@@ -68,7 +77,7 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 1,
         marginVertical: 8,
         marginHorizontal: 12,
-        borderBottomColor: '#f0f0f0',
+        borderBottomColor: '#F0F0F0',
     },
     cartStoreInfoContainer: {
         flexDirection: 'row',
@@ -78,7 +87,7 @@ export const styles = StyleSheet.create({
         gap: 8,
     },
     cartStoreNameText: {
-        fontSize: 14,
+        fontSize: 20,
         fontWeight: '600',
         color: '#333',
     },
@@ -101,8 +110,8 @@ export const styles = StyleSheet.create({
         flex: 1,
         gap: 6,
     },
-    cartItemNmContainer: {
-        fontSize: 14,
+    cartItemNmText: {
+        fontSize: 18,
         fontWeight: '600',
         color: '#333',
     },
@@ -112,12 +121,12 @@ export const styles = StyleSheet.create({
         gap: 6,
     },
     cartItemSalePriceText: {
-        fontSize: 14,
+        fontSize: 18,
         fontWeight: '600',
         color: '#EF7810',
     },
     cartItemOriginalPriceText: {
-        fontSize: 12,
+        fontSize: 18,
         color: '#999',
         textDecorationLine: 'line-through',
     },
@@ -128,13 +137,13 @@ export const styles = StyleSheet.create({
         paddingVertical: 4,
         paddingHorizontal: 8,
         borderWidth: 1,
-        borderColor: '#e0e0e0',
+        borderColor: '#E0E0E0',
         borderRadius: 4,
         width: 70,
         justifyContent: 'center',
     },
     cartItemQtyText: {
-        fontSize: 12,
+        fontSize: 18,
         color: '#666',
     },
     cartItemQtyButton: {
@@ -152,6 +161,11 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         gap: 8,
     },
+    cartItemEachText:{
+      fontSize: 14,
+      fontWeight: '600',
+      color: '#999',
+    },
     cartItemEachPriceText: {
         fontSize: 14,
         fontWeight: '600',
@@ -161,7 +175,7 @@ export const styles = StyleSheet.create({
         padding: 8,
     },
     cartItemDeleteButtonText: {
-        fontSize: 18,
+        fontSize: 20,
         color: '#999',
     },
     cartItemDetailTotalContainer: {
@@ -173,17 +187,12 @@ export const styles = StyleSheet.create({
         gap: 8,
         paddingTop: 12,
     },
-    cartItemTotalLabel: {
-        fontSize: 12,
+    cartItemTotalText: {
+        fontSize: 18,
         color: '#999',
-    },
-    cartItemTotalOriginalPriceText: {
-        fontSize: 12,
-        color: '#999',
-        textDecorationLine: 'line-through',
     },
     cartItemTotalSalePriceText: {
-        fontSize: 14,
+        fontSize: 18,
         fontWeight: '600',
         color: '#EF7810',
     },
@@ -194,23 +203,24 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 16,
         backgroundColor: '#fff',
         borderTopWidth: 1,
-        borderTopColor: '#e0e0e0',
+        borderTopColor: '#E0E0E0',
     },
     purchaseSummaryRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        marginBottom: 4,
     },
-    purchaseLabel: {
-        fontSize: 14,
+    purchaseText: {
+        fontSize: 18,
         color: '#666',
     },
     purchaseValue: {
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: '600',
         color: '#000',
     },
-    purchaseValueOrange: {
+    purchaseValueOriginal: {
         fontSize: 18,
         fontWeight: '700',
         color: '#EF7810',
@@ -218,13 +228,13 @@ export const styles = StyleSheet.create({
     purchaseButtonContainer: {
         borderWidth: 1,
         borderColor: '#EF7810',
-        paddingVertical: 10,
+        paddingVertical: 21,
         alignItems: 'center',
         borderRadius: 6,
     },
     purchaseButtonText: {
         color: '#EF7810',
-        fontSize: 16,
+        fontSize: 20,
         fontWeight: '600',
     },
 });
