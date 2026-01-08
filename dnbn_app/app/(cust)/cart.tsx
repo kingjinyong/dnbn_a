@@ -6,15 +6,15 @@ import Ionicons from '@expo/vector-icons/build/Ionicons';
 import { router } from 'expo-router';
 
 export default function CartScreen() {
-    const [selectAll, setSelectAll] = useState(false);
-    const insets = useSafeAreaInsets();
+  const [selectAll, setSelectAll] = useState(false);
+  const insets = useSafeAreaInsets();
 
     return (
         <View style={styles.container}>
             {insets.top > 0 && (
                 <View style={{ height: insets.top, backgroundColor: "#FFFFFF" }} />
             )}
-            <View style={styles.headerContainer}>
+            <View style={styles.header}>
                 <TouchableOpacity
                     style={styles.backButton}
                     onPress={() => router.back()}
@@ -206,9 +206,9 @@ export default function CartScreen() {
 
             </View>
 
-            <Pressable style={styles.purchaseButtonContainer}>
-                <Text style={styles.purchaseButtonText}>주문하기</Text>
-            </Pressable>
+      <Pressable style={styles.purchaseButtonContainer}>
+        <Text style={styles.purchaseButtonText}>주문하기</Text>
+      </Pressable>
 
             {insets.bottom > 0 && (
                 <View style={{ height: insets.bottom, backgroundColor: "#000" }} />
