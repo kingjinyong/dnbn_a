@@ -79,11 +79,15 @@ export const styles = StyleSheet.create({
     flex: 1,
     marginBottom: 10,
   },
+  productImageContainer: {
+    height: 200
+  },
   productImage: {
     backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
     width: '100%',
+    height: "100%",
     borderRadius: 5,
     resizeMode: 'contain',
   },
@@ -92,6 +96,6 @@ export const styles = StyleSheet.create({
   },
   date: {
     fontSize: 12,
-    color: "#969696"
+    color: "#969696",
   },
 })
