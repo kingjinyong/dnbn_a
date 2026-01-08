@@ -64,7 +64,7 @@ export default function Mypage() {
             <View>
               <TouchableOpacity
                 style={styles.contentContainer}
-                onPress={() => router.navigate("/(cust)/tabs/custhome")}
+                onPress={() => router.navigate("/gitf-box")}
               >
                 <Text style={styles.contentText}>선물함</Text>
                 <Ionicons name="chevron-forward" size={24} color="black" />
@@ -91,7 +91,7 @@ export default function Mypage() {
             <View>
               <TouchableOpacity
                 style={styles.contentContainer}
-                onPress={() => router.navigate("/(cust)/tabs/custhome")}
+                onPress={() => router.navigate("/notification-setting")}
               >
                 <Text style={styles.contentText}>알림 설정</Text>
                 <Ionicons name="chevron-forward" size={24} color="black" />
