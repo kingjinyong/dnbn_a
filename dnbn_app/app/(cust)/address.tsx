@@ -1,7 +1,7 @@
-import { Text, View, ScrollView, TouchableOpacity, FlatList } from "react-native";
-import { Link, router } from "expo-router";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
+import { Link, router } from "expo-router";
+import { FlatList, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { styles } from "./address.styles";
 
 export default function AddressScreen() {
@@ -20,7 +20,7 @@ export default function AddressScreen() {
         <TouchableOpacity style={styles.backButton} onPress={() => router.navigate("/(cust)/tabs/custhome")}>
             <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
-        <Text style={styles.title} pointerEvents="none">내 위치 설정</Text>
+        <Text style={styles.title}>내 위치 설정</Text>
         <View style={styles.placeholder} />
       </View>
 

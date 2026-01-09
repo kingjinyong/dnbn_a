@@ -1,9 +1,9 @@
-import { Text, View, ScrollView, Pressable, TouchableOpacity } from 'react-native';
-import { useState } from 'react';
-import { styles } from './cart.styles';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Ionicons from '@expo/vector-icons/build/Ionicons';
 import { router } from 'expo-router';
+import { useState } from 'react';
+import { Pressable, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { styles } from './cart.styles';
 
 export default function CartScreen() {
   const [selectAll, setSelectAll] = useState(false);
@@ -21,7 +21,7 @@ export default function CartScreen() {
                 >
                     <Ionicons name="chevron-back" size={24} color="#000" />
                 </TouchableOpacity>
-                <Text style={styles.title} pointerEvents="none">
+                <Text style={styles.title}>
                     장바구니
                 </Text>
                 <View style={styles.placeholder} />

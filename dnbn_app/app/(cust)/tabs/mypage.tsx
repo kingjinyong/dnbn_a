@@ -16,7 +16,7 @@ export default function Mypage() {
   };
 
   return (
-    <View style={[styles.mypageViewContainer]}>
+    <View style={styles.mypageViewContainer}>
       {insets.top > 0 && (
         <View style={{ height: insets.top, backgroundColor: "#FFFFFF" }} />
       )}

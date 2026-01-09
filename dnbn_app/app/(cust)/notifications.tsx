@@ -1,8 +1,8 @@
-import { Text, View, ScrollView, TouchableOpacity } from "react-native";
-import { styles } from "./notifications.styles";
 import Ionicons from "@expo/vector-icons/build/Ionicons";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { router } from "expo-router";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { styles } from "./notifications.styles";
 
 export default function NotificationsScreen() {
   const insets = useSafeAreaInsets();
