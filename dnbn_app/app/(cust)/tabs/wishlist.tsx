@@ -1,8 +1,8 @@
-import { Text, View, ScrollView, TouchableOpacity } from "react-native";
-import { styles } from "./wishlist.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { styles } from "./wishlist.styles";
 
 export default function WishlistScreen() {
   const insets = useSafeAreaInsets();
@@ -28,9 +28,6 @@ export default function WishlistScreen() {
 
         <Text style={styles.emptyText}>찜한 상품이 없습니다 ❤️</Text>
       </ScrollView>
-      {insets.bottom > 0 && (
-        <View style={{ height: insets.bottom, backgroundColor: "#000" }} />
-      )}
     </View>
   );
 }

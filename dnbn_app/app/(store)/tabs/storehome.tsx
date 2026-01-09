@@ -1,8 +1,8 @@
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { styles } from "./storehome.styles";
-import { Text, View, ScrollView, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { styles } from "./storehome.styles";
 
 export default function StoreHome() {
   const insets = useSafeAreaInsets();
@@ -91,9 +91,6 @@ export default function StoreHome() {
           </View>
         </View>
       </ScrollView>
-      {insets.bottom > 0 && (
-        <View style={{ height: insets.bottom, backgroundColor: "#000" }} />
-      )}
     </View>
   );
 }

@@ -1,8 +1,8 @@
+import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { styles } from "./storesales.styles";
-import { Text, View, ScrollView, TouchableOpacity } from "react-native";
-import { router } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
 
 export default function StoreSales() {
   const insets = useSafeAreaInsets();
@@ -32,9 +32,6 @@ export default function StoreSales() {
           <Text style={styles.subtitle}>할인 이벤트를 관리하세요</Text>
         </View>
       </ScrollView>
-        {insets.bottom > 0 && (
-        <View style={{ height: insets.bottom, backgroundColor: "#000" }} />
-      )}
     </View>
   );
 }

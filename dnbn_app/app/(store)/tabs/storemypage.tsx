@@ -1,9 +1,9 @@
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { styles } from "./storemypage.styles";
-import { Text, View, ScrollView, TouchableOpacity } from "react-native";
+import { useAuth } from "@/contexts/AuthContext";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
-import { useAuth } from "@/contexts/AuthContext";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { styles } from "./storemypage.styles";
 
 export default function StoreMypage() {
   const insets = useSafeAreaInsets();
@@ -39,7 +39,7 @@ export default function StoreMypage() {
             <Text style={styles.sectionTitle}>회원 정보</Text>
             <TouchableOpacity
               style={styles.menuItem}
-              onPress={() => router.push("/(store)/settings")}
+              onPress={() => router.push("/(store)/tabs/storehome")}
             >
               <Text style={styles.menuText}>내 가맹점</Text>
               <Ionicons name="chevron-forward" size={24} color="#666" />
@@ -85,9 +85,6 @@ export default function StoreMypage() {
           </View>
         </View>
       </ScrollView>
-      {insets.bottom > 0 && (
-        <View style={{ height: insets.bottom, backgroundColor: "#000" }} />
-      )}
     </View>
   );
 }
