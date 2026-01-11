@@ -30,21 +30,6 @@ export const styles = StyleSheet.create({
   placeholder: {
     width: 40,
   },
-  headerTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#333",
-  },
-  addProductButton: {
-    borderWidth: 1,
-    borderColor: "#ef7810",
-    marginHorizontal: 20,
-    marginBottom: 10,
-    paddingVertical: 10,
-    borderRadius: 10,
-    justifyContent: "center",
-    alignItems: "center",
-  },
   content: {
     flex: 1,
     backgroundColor: "#fff",
@@ -54,10 +39,41 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     boxShadow: "0 0px 6px rgba(0,0,0,0.1)",
   },
-  productTouchable: {
+  tabContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    height: 50,
+  },
+  tabButton: {
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+    height: 50,
+    borderBottomWidth: 1,
+    borderBottomColor: "#E0E0E0",
+  },
+  tabButtonActive: {
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+    height: 50,
+    borderBottomWidth: 2,
+    borderBottomColor: "#ef7810",
+  },
+  tabButtonText: {
+    color: "#999",
+    fontSize: 15,
+  },
+  tabButtonTextActive: {
+    color: "#000",
+    fontSize: 15,
+    fontWeight: "600",
+  },
+  listTouchable: {
     justifyContent: "flex-start",
   },
-  productContainer: {
+  listContainer: {
     flexDirection: "row",
     borderRadius: 10,
     overflow: "hidden",
@@ -66,42 +82,42 @@ export const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 10,
   },
-  productImageContainer: {
+  listImageContainer: {
     width: 130,
     height: 130,
   },
-  productImage: {
+  listImage: {
     width: "100%",
     height: "100%",
   },
-  productInfoContainer: {
+  listInfoContainer: {
     flex: 1,
     paddingHorizontal: 15,
     justifyContent: "center",
   },
-  categoryName: {
+  listcategoryName: {
     fontSize: 12,
     color: "#888",
   },
-  productName: {
+  listproductName: {
     fontSize: 16,
     fontWeight: "bold",
     color: "#000",
     marginBottom: 4,
   },
-  price: {
+  listprice: {
     fontSize: 16,
     fontWeight: "bold",
     color: "#ef7810",
   },
-  productButtonContainer: {
+  listButtonContainer: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
     marginVertical: 10,
     marginHorizontal: 20,
   },
-  saleButton: {
+  negoCancelButton: {
     flex: 1,
     backgroundColor: "#fff",
     borderColor: "#ef7810",
@@ -112,12 +128,75 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  saleButtonText: {
+  negoCancelButtonText: {
     color: "#ef7810",
     fontSize: 14,
     fontWeight: "bold",
   },
-  negoButton: {
+  historyTouchable: {
+    justifyContent: "flex-start",
+  },
+  historyContainer: {
+    flexDirection: "row",
+    borderRadius: 10,
+    overflow: "hidden",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+  },
+  historyImageContainer: {
+    width: 130,
+    height: 130,
+  },
+  historyImage: {
+    width: "100%",
+    height: "100%",
+  },
+  historyInfoContainer: {
+    flex: 1,
+    paddingHorizontal: 15,
+    justifyContent: "center",
+  },
+  historycategoryName: {
+    fontSize: 12,
+    color: "#888",
+  },
+  historyproductName: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#000",
+    marginBottom: 4,
+  },
+  historyofferedPrice: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#ef7810",
+  },
+  historyButtonContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    marginVertical: 10,
+    marginHorizontal: 20,
+  },
+  approveButton: {
+    flex: 1,
+    backgroundColor: "#fff",
+    borderColor: "#ef7810",
+    borderWidth: 1,
+    paddingVertical: 6,
+    borderRadius: 6,
+    marginRight: 8,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  approveButtonText: {
+    color: "#ef7810",
+    fontSize: 14,
+    fontWeight: "bold",
+  },
+  rejectButton: {
     flex: 1,
     backgroundColor: "#fff",
     borderColor: "#ef7810",
@@ -128,7 +207,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  negoButtonText: {
+  rejectButtonText: {
     color: "#ef7810",
     fontSize: 14,
     fontWeight: "bold",

@@ -90,9 +90,6 @@ export default function StoreHome() {
           </View>
         </View>
       </ScrollView>
-      {insets.bottom > 0 && (
-        <View style={{ height: insets.bottom, backgroundColor: "#000" }} />
-      )}
     </View>
   );
 }
