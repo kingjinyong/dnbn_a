@@ -13,7 +13,7 @@ export default function StoreOrdersScreen() {
       <View style={styles.header}>
         <TouchableOpacity>
           <Ionicons name="chevron-back" size={24} color="black" />
-          <Text style={styles.title} pointerEvents="none">
+          <Text style={styles.title}>
             주문관리
           </Text>
           <View style={styles.placeholder} />

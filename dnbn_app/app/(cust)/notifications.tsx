@@ -9,7 +9,7 @@ export default function NotificationsScreen() {
   return (
     <View style={styles.container}>
       {insets.top > 0 && (
-        <View style={{ height: insets.top, backgroundColor: "#FFFFFF"}} />
+        <View style={{ height: insets.top, backgroundColor: "#fff" }} />
       )}
       <View style={styles.header}>
         {/* 현재 onPress의 router.back()이 작동하지 않아 navigate로 대체함 */}
@@ -19,7 +19,7 @@ export default function NotificationsScreen() {
         >
           <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
-        <Text style={styles.title} pointerEvents="none">
+        <Text style={styles.title}>
           알림
         </Text>
         <View style={styles.placeholder} />
@@ -28,7 +28,7 @@ export default function NotificationsScreen() {
         <Text style={styles.emptyText}>새로운 알림이 없습니다 🔔</Text>
       </ScrollView>
       {insets.bottom > 0 && (
-        <View style={{ height: insets.bottom, backgroundColor: "#000"}} />
+        <View style={{ height: insets.bottom, backgroundColor: "#000" }} />
       )}
     </View>
   );

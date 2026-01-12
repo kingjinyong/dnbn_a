@@ -26,22 +26,23 @@ export const styles = StyleSheet.create({
     left: 0,
     right: 0,
     textAlign: "center",
+    pointerEvents: "none"
   },
   placeholder: {
     width: 40,
   },
-    qrContainer: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    qrImage: {
-        width: 300,
-        height: 300,
-        resizeMode: "contain",
-    },
-    qrText: {
-        fontSize: 20,
-        fontWeight: "bold",
-    }
+  qrContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  qrImage: {
+    width: 300,
+    height: 300,
+    resizeMode: "contain",
+  },
+  qrText: {
+    fontSize: 20,
+    fontWeight: "bold",
+  }
 });

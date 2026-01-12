@@ -26,16 +26,21 @@ export default function AddressScreen() {
 
       <View>
         <FlatList
-        data={addr}
-        keyExtractor={item => item.id}
-        renderItem={({item}) => (
-            <View style={{padding: 15, borderBottomWidth: 1, borderBottomColor: '#eee'}}>
-                <Text style={{fontSize: 16, fontWeight: 'bold'}}>{item.label}</Text>
-                <Text style={{fontSize: 14, color: '#555', marginTop: 5}}>{item.details}</Text>
-                <Text style={{fontSize: 14, color: '#555', marginTop: 5}}>수령인: {item.recipient} | 연락처: {item.phone}</Text>
+          data={addr}
+          keyExtractor={item => item.id}
+          renderItem={({item}) => (
+            <View style={styles.listItem}>
+              <View style={{flex: 1, padding: 15}}>
+                <Text style={styles.itemText}>{item.label}</Text>
+                <Text style={styles.itemDetailText}>{item.details}</Text>
+                <Text style={styles.itemDetailText}>수령인: {item.recipient} | 연락처: {item.phone}</Text>
+              </View>
+              <TouchableOpacity style={styles.deleteButton}>
+                <Text style={styles.deleteButtonText}>X</Text>
+              </TouchableOpacity>
             </View>
-
-        )}></FlatList>
+          )}
+        />
       </View>
       <Link href="/(cust)/address-select" asChild>
         <TouchableOpacity style={styles.addButton}>

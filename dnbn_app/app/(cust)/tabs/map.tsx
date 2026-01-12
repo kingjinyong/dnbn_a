@@ -33,7 +33,7 @@ export default function CustMapScreen() {
   return (
     <View style={styles.container}>
       {insets.top > 0 && (
-        <View style={{ height: insets.top, backgroundColor: "#000" }} />
+        <View style={{ height: insets.top, backgroundColor: "#fff" }} />
       )}
       <View style={styles.header}>
         <TouchableOpacity
@@ -42,24 +42,24 @@ export default function CustMapScreen() {
         >
           <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
-        <Text style={styles.title} pointerEvents="none">
+        <Text style={styles.title}>
           내 위치 설정
         </Text>
         <View style={styles.placeholder} />
       </View>
       <View style={styles.content}>
-        <TextInput 
-          placeholder="가맹점이나 지역을 검색하세요" 
+        <TextInput
+          placeholder="가맹점이나 지역을 검색하세요"
           style={styles.textInput}
           placeholderTextColor="#999"
         />
         {/* 지도 API 영역 */}
         {/* 지도 마커 클릭 시 handleStoreSelect(storeData) 호출 */}
-        
+
         {/* 선택된 가맹점 정보 표시 */}
         {selectedStore && (
           <View style={styles.storeInfoContainer}>
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.closeButton}
               onPress={handleCloseStoreInfo}
             >
@@ -71,6 +71,9 @@ export default function CustMapScreen() {
           </View>
         )}
       </View>
+      {insets.bottom > 0 && (
+        <View style={{ height: insets.bottom, backgroundColor: "#000" }} />
+      )}
     </View>
   );
 }

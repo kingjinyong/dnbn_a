@@ -7,7 +7,7 @@ import { styles } from './noticedetail.styles';
 export default function NoticeDetailScreen() {
     const insets = useSafeAreaInsets();
 
-        return (
+    return (
         <View style={styles.container}>
             {insets.top > 0 && (
                 <View style={{ height: insets.top, backgroundColor: "#FFFFFF" }} />
@@ -19,7 +19,7 @@ export default function NoticeDetailScreen() {
                 >
                     <Ionicons name="chevron-back" size={24} color="#000" />
                 </TouchableOpacity>
-                <Text style={styles.title} pointerEvents="none">
+                <Text style={styles.title}>
                     공지사항
                 </Text>
                 <View style={styles.placeholder} />

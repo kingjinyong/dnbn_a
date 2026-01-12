@@ -3,7 +3,7 @@ import { router } from 'expo-router';
 import { useState } from 'react';
 import { Modal, Pressable, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { styles } from './myinfo.styles';
+import { styles } from './my-info.styles';
 
 export default function MyInfoScreen() {
     const [gender, setGender] = useState('male');
@@ -74,17 +74,6 @@ export default function MyInfoScreen() {
                             <Pressable style={styles.myInfoRadioButton} onPress={() => setGender('female')}>
                                 <View style={[styles.myInfoRadioButtonCircle, gender === 'female' && styles.myInfoRadioButtonCircleActive]} />
                                 <Text style={styles.myInfoRadioButtonText}>여성</Text>
-                            </Pressable>
-                        </View>
-                    </View>
-
-                    {/* 관심 카테고리 */}
-                    <View style={styles.myInfoItemContainer}>
-                        <Text style={styles.myInfoItemText}>관심 카테고리</Text>
-                        <View style={styles.myInfoCategoryContainer}>
-                            <Pressable style={styles.myInfoCategoryButton} onPress={() => setCategoryModalVisible(true)}>
-                                <Text style={styles.myInfoCategoryButtonText}>한식, 양식</Text>
-                                <Text style={styles.myInfoCategoryButtonArrow}>{'>'}</Text>
                             </Pressable>
                         </View>
                     </View>
@@ -195,6 +184,9 @@ export default function MyInfoScreen() {
                     </View>
                 </View >
             </Modal >
+            {insets.bottom > 0 && (
+                <View style={{ height: insets.bottom, backgroundColor: '#000' }} />
+            )}
         </View >
     );
 }

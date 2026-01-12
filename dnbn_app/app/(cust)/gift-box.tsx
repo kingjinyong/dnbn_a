@@ -3,8 +3,7 @@ import { router } from "expo-router";
 import { useState } from "react";
 import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { styles } from "./gitf-box.styles";
-
+import {styles} from "./gift-box.styles";
 
 const notUsedProducts = [
 {
