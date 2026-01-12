@@ -26,6 +26,7 @@ export const styles = StyleSheet.create({
         left: 0,
         right: 0,
         textAlign: 'center',
+        pointerEvents: "none"
     },
     placeholder: {
         width: 40,
@@ -242,7 +243,7 @@ export const styles = StyleSheet.create({
     storeProductPriceContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap:6,
+        gap: 6,
         marginBottom: 4,
     },
     salePercentText: {
@@ -250,7 +251,7 @@ export const styles = StyleSheet.create({
         fontWeight: '600',
         color: '#EF7810',
     },
-    originalPriceText:{
+    originalPriceText: {
         fontSize: 18,
         textDecorationLine: 'line-through',
         color: '#999',
@@ -263,6 +264,6 @@ export const styles = StyleSheet.create({
     ratingText: {
         fontSize: 18,
         color: '#999',
-       lineHeight: 24,
+        lineHeight: 24,
     },
 });

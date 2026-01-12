@@ -89,7 +89,7 @@ export default function PurchaseScreen() {
         >
           <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
-        <Text style={styles.title} pointerEvents="none">
+        <Text style={styles.title}>
           구매내역
         </Text>
         <View style={styles.placeholder} />

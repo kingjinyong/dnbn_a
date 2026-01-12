@@ -33,7 +33,7 @@ export default function Mypage() {
         >
           <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
-        <Text style={styles.title} pointerEvents="none">
+        <Text style={styles.title}>
           마이페이지
         </Text>
         {userType === "store" && (

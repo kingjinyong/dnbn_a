@@ -29,6 +29,7 @@ export const styles = StyleSheet.create({
         left: 0,
         right: 0,
         textAlign: 'center',
+        pointerEvents: "none"
     },
     topnav: {
         flexDirection: 'row',
@@ -116,12 +117,12 @@ export const styles = StyleSheet.create({
     inactiveTabText: {
         color: '#555',
     },
-    unwrittenStatus:{
+    unwrittenStatus: {
         fontSize: 16,
         color: '#555',
         marginTop: 5,
     },
-    reviewWriteButton:{
+    reviewWriteButton: {
         flex: 1,
         marginTop: 10,
         paddingVertical: 8,
@@ -132,7 +133,7 @@ export const styles = StyleSheet.create({
         alignSelf: 'flex-start',
         width: '100%',
     },
-    reviewWriteButtonText:{
+    reviewWriteButtonText: {
         color: '#FF6B35',
         fontSize: 16,
         fontWeight: 'bold',

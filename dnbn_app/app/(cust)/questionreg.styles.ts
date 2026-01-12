@@ -26,6 +26,7 @@ export const styles = StyleSheet.create({
         left: 0,
         right: 0,
         textAlign: 'center',
+        pointerEvents: "none"
     },
     placeholder: {
         width: 40,
@@ -109,7 +110,7 @@ export const styles = StyleSheet.create({
         borderRadius: 6,
         alignItems: 'center',
     },
-    cancelButton:{
+    cancelButton: {
         flex: 1,
         paddingVertical: 12,
         borderWidth: 1,

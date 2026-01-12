@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
         backgroundColor: '#fff',
     },
@@ -26,6 +26,7 @@ export const styles = StyleSheet.create({
         left: 0,
         right: 0,
         textAlign: 'center',
+        pointerEvents: "none",
     },
     placeholder: {
         width: 40,
@@ -38,7 +39,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        minHeight: 70,         
+        minHeight: 70,
         borderBottomColor: '#eee',
         borderBottomWidth: 1,
         paddingVertical: 12,

@@ -26,6 +26,7 @@ export const styles = StyleSheet.create({
         left: 0,
         right: 0,
         textAlign: 'center',
+        pointerEvents: "none"
     },
     placeholder: {
         width: 40,
@@ -43,8 +44,8 @@ export const styles = StyleSheet.create({
         paddingVertical: 12,
         paddingHorizontal: 12,
     },
-    noticeItemDetailContainer:{
-        flex:1
+    noticeItemDetailContainer: {
+        flex: 1
     },
     noticeItemTitleText: {
         fontSize: 20,

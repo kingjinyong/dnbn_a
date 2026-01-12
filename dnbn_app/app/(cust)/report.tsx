@@ -12,8 +12,8 @@ export default function ReportListScreen() {
     const reports = [
         // 신고 목록 데이터 예시
         { id: "1", type: "가맹점", title: "부적절한 내용 신고", status: "답변완료", date: "2024-06-10", answer: "신고하신 내용에 대해 검토 후 조치하였습니다." },
-        { id: "2", type: "상품", title: "스팸 신고", status: "답변전", date: "2024-06-12", answer: "" },
-        { id: "3", type: "가맹점", title: "기타 신고", status: "답변전", date: "2024-06-14", answer: "" },
+        { id: "2", type: "상품", title: "스팸 신고", status: "답변대기", date: "2024-06-12", answer: "" },
+        { id: "3", type: "가맹점", title: "기타 신고", status: "답변대기", date: "2024-06-14", answer: "" },
     ];
 
     const toggleExpand = (id: string) => {
@@ -44,7 +44,7 @@ export default function ReportListScreen() {
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => (
                         <TouchableOpacity
-                            onPress={() => toggleExpand(item.id)}
+                            onPress={() => router.navigate(`/(cust)/reportDetail`)}
                             activeOpacity={0.7}
                         >
                             <View style={styles.reportItemWrapper}>

@@ -34,7 +34,7 @@ export default function StoreInfo() {
         >
           <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
-        <Text style={styles.title} pointerEvents="none">
+        <Text style={styles.title}>
           가맹점이름들어가기
         </Text>
         <View style={styles.placeholder} />

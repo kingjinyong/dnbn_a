@@ -81,7 +81,7 @@ export default function CustReviewListScreen() {
         >
           <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
-        <Text style={styles.title} pointerEvents="none">
+        <Text style={styles.title}>
           리뷰
         </Text>
         <View style={styles.placeholder} />

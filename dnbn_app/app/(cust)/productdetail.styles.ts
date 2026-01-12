@@ -26,6 +26,7 @@ export const styles = StyleSheet.create({
         left: 0,
         right: 0,
         textAlign: 'center',
+        pointerEvents: "none"
     },
     placeholder: {
         width: 40,
@@ -95,7 +96,7 @@ export const styles = StyleSheet.create({
         fontWeight: '600',
         color: '#000',
     },
-    productStoreAddrText:{
+    productStoreAddrText: {
         fontSize: 18,
     },
     mapIconText: {

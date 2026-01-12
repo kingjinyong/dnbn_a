@@ -34,7 +34,7 @@ export default function StoreNego() {
         >
           <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
-        <Text style={styles.title} pointerEvents="none">
+        <Text style={styles.title}>
           네고 관리
         </Text>
         <View style={styles.placeholder} />

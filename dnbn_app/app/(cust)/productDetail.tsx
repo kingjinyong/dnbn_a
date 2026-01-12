@@ -27,7 +27,7 @@ export default function ProductDetailScreen() {
                 >
                     <Ionicons name="chevron-back" size={24} color="#000" />
                 </TouchableOpacity>
-                <Text style={styles.title} pointerEvents="none">
+                <Text style={styles.title}>
                     상품이름 나오기
                 </Text>
                 <View style={styles.placeholder} />

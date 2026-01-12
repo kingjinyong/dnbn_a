@@ -27,7 +27,7 @@ export default function PracticeView() {
         >
           <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
-        <Text style={styles.title} pointerEvents="none">
+        <Text style={styles.title}>
           동네방네에 오신 것을 환영합니다.
         </Text>
         <View style={styles.placeholder} />
