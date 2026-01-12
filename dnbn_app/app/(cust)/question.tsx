@@ -60,7 +60,6 @@ export default function NoticeDetailScreen() {
                             </View>
                         </View>
                     )}
-                    scrollEnabled={false}
                 />
             </View>
             {insets.bottom > 0 && (
