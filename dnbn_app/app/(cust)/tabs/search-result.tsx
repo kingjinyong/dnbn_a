@@ -304,119 +304,126 @@ export default function SearchView() {
     },
   ];
 
-
   return (
-    <View style={styles.container}>
+    <View style={styles.searchResultView}>
       {insets.top > 0 && (
         <View style={{ height: insets.top, backgroundColor: "#fff" }} />
       )}
-      <View style={styles.header}>
-        <TouchableOpacity
-          style={styles.backButton}
-          onPress={() => router.back()}
-        >
-          <Ionicons name="chevron-back" size={24} color="#000" />
-        </TouchableOpacity>
-        <Text style={styles.title}>
-          검색 결과
-        </Text>
-        <View style={styles.placeholder} />
-      </View>
 
-      <View style={styles.productResultContainer}>
-        <View style={styles.productAndStoreTab}>
-          <Pressable
-            style={[
-              styles.tabButton,
-              activeTab === "product" && styles.tabButtonActive,
-            ]}
-            onPress={() => setActiveTab("product")}
+      <View style={styles.container}>
+        {insets.top > 0 && (
+          <View style={{ height: insets.top, backgroundColor: "#fff" }} />
+        )}
+        <View style={styles.header}>
+          <TouchableOpacity
+            style={styles.backButton}
+            onPress={() => router.back()}
           >
-            <Text
-              style={[
-                styles.tabText,
-                activeTab === "product" && styles.tabTextActive,
-              ]}
-            >상품</Text>
-          </Pressable>
-          <Pressable
-            style={[
-              styles.tabButton,
-              activeTab === "store" && styles.tabButtonActive,
-            ]}
-            onPress={() => setActiveTab("store")}
-          >
-            <Text
-              style={[
-                styles.tabText,
-                activeTab === "store" && styles.tabTextActive,
-              ]}
-            >상점</Text>
-          </Pressable>
+            <Ionicons name="chevron-back" size={24} color="#000" />
+          </TouchableOpacity>
+          <Text style={styles.title}>
+            검색 결과
+          </Text>
+          <View style={styles.placeholder} />
         </View>
-        <View style={styles.searchResult}>
-          <View style={styles.infoContainer}>
-            <Text style={styles.resultCountHeaderText}>
-              총 {activeTab === "product" ? products.length : stores.length}개
-            </Text>
-            <Text style={styles.filter}>리뷰 순</Text>
+
+        <View style={styles.productResultContainer}>
+          <View style={styles.productAndStoreTab}>
+            <Pressable
+              style={[
+                styles.tabButton,
+                activeTab === "product" && styles.tabButtonActive,
+              ]}
+              onPress={() => setActiveTab("product")}
+            >
+              <Text
+                style={[
+                  styles.tabText,
+                  activeTab === "product" && styles.tabTextActive,
+                ]}
+              >상품</Text>
+            </Pressable>
+            <Pressable
+              style={[
+                styles.tabButton,
+                activeTab === "store" && styles.tabButtonActive,
+              ]}
+              onPress={() => setActiveTab("store")}
+            >
+              <Text
+                style={[
+                  styles.tabText,
+                  activeTab === "store" && styles.tabTextActive,
+                ]}
+              >상점</Text>
+            </Pressable>
           </View>
-          {activeTab === "product" ? (
-            <View>
-              <FlatList
-                data={products}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item: product }) => (
-                  <View>
-                    <TouchableOpacity onPress={() => router.push('/(cust)/productDetail')} style={styles.products}>
-                      <Image resizeMode='contain' source={product.uri} style={styles.productImage} />
-                      <View style={styles.productInfo}>
-                        <Text style={styles.name}>{product.name}</Text>
-                        <View style={styles.priceInfo}>
-                          <Text style={styles.originalPriceText}>{product.originalPrice}원</Text>
-                          <Text style={styles.discountRateText}>{product.discountRate}% </Text>
+
+          <View style={styles.searchResult}>
+            <View style={styles.infoContainer}>
+              <Text style={styles.resultCountHeaderText}>
+                총 {activeTab === "product" ? products.length : stores.length}개
+              </Text>
+              <Text style={styles.filter}>리뷰 순</Text>
+            </View >
+
+            {activeTab === "product" ? (
+              <View>
+                <FlatList
+                  data={products}
+                  keyExtractor={(item) => item.id}
+                  renderItem={({ item: product }) => (
+                    <View>
+                      <TouchableOpacity onPress={() => router.push('/(cust)/productDetail')} style={styles.products}>
+                        <Image resizeMode='contain' source={product.uri} style={styles.productImage} />
+                        <View style={styles.productInfo}>
+                          <Text style={styles.name}>{product.name}</Text>
+                          <View style={styles.priceInfo}>
+                            <Text style={styles.originalPriceText}>{product.originalPrice}원</Text>
+                            <Text style={styles.discountRateText}>{product.discountRate}% </Text>
+                          </View>
+                          <Text style={styles.priceText}>{product.price}원</Text>
+                          <View style={styles.reviewInfo}>
+                            <Ionicons name="star" size={16} color="#FFD700" />
+                            <Text style={styles.averageRate}> {product.averageRate}</Text>
+                            <Text style={styles.reviewCount}>({product.reviewCount})</Text>
+                          </View>
                         </View>
-                        <Text style={styles.priceText}>{product.price}원</Text>
+                      </TouchableOpacity>
+                    </View>
+                  )}
+                  showsVerticalScrollIndicator={false}
+                  scrollEnabled={true}
+                />
+              </View>
+            ) : (
+              <View>
+                <FlatList
+                  data={stores}
+                  keyExtractor={(item) => item.id}
+                  renderItem={({ item: store }) => (
+                    <View style={styles.stores}>
+                      <Image resizeMode='contain' source={store.uri} style={styles.storeImage} />
+                      <View style={styles.storeInfo}>
+                        <View style={styles.storeNameRow}>
+                          <Text style={styles.name}>{store.name}</Text>
+                          <Text style={styles.category}>{store.category}</Text>
+                        </View>
+                        <Text ellipsizeMode="tail" numberOfLines={2} style={styles.descriptionText}>{store.description}</Text>
                         <View style={styles.reviewInfo}>
                           <Ionicons name="star" size={16} color="#FFD700" />
-                          <Text style={styles.averageRate}> {product.averageRate}</Text>
-                          <Text style={styles.reviewCount}>({product.reviewCount})</Text>
+                          <Text style={styles.averageRate}> {store.averageRate}</Text>
+                          <Text style={styles.reviewCount}>({store.reviewCount})</Text>
                         </View>
                       </View>
-                    </TouchableOpacity>
-                  </View>
-                )}
-                showsVerticalScrollIndicator={false}
-                scrollEnabled={true}
-              />
-            </View>
-          ) : (
-            <View>
-              <FlatList
-                data={stores}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item: store }) => (
-                  <View style={styles.stores}>
-                    <Image resizeMode='contain' source={store.uri} style={styles.storeImage} />
-                    <View style={styles.storeInfo}>
-                      <View style={styles.storeNameRow}>
-                        <Text style={styles.name}>{store.name}</Text>
-                        <Text style={styles.category}>{store.category}</Text>
-                      </View>
-                      <Text ellipsizeMode="tail" numberOfLines={2} style={styles.descriptionText}>{store.description}</Text>
-                      <View style={styles.reviewInfo}>
-                        <Ionicons name="star" size={16} color="#FFD700" />
-                        <Text style={styles.averageRate}> {store.averageRate}</Text>
-                        <Text style={styles.reviewCount}>({store.reviewCount})</Text>
-                      </View>
                     </View>
-                  </View>
-                )}
-                showsVerticalScrollIndicator={false}
-                scrollEnabled={true}
-              />
-            </View>
-          )}
+                  )}
+                  showsVerticalScrollIndicator={false}
+                  scrollEnabled={true}
+                />
+              </View>
+            )}
+          </View>
         </View>
       </View>
     </View>
