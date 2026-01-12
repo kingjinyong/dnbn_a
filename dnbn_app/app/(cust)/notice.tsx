@@ -61,7 +61,6 @@ export default function NoticeScreen() {
                         <Ionicons name="chevron-forward" size={24} color="#EF7810" />
                     </Pressable>
                 )}
-                scrollEnabled={false}
             />
             {insets.bottom > 0 && (
         <View style={{ height: insets.bottom, backgroundColor: "#000"}} />

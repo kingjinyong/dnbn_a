@@ -40,7 +40,6 @@ export default function AddressScreen() {
               </TouchableOpacity>
             </View>
           )}
-          scrollEnabled={false}
         />
       </View>
       <Link href="/(cust)/address-select" asChild>
