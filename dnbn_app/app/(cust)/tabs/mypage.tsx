@@ -56,14 +56,14 @@ export default function Mypage() {
             <Text style={styles.sectionTitle}>회원 정보</Text>
             <TouchableOpacity
               style={styles.menuItem}
-              onPress={() => router.navigate("/(cust)/myInfo")}
+              onPress={() => router.navigate("/(cust)/my-info")}
             >
               <Text style={styles.menuText}>내 정보</Text>
               <Ionicons name="chevron-forward" size={24} color="black" />
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.menuItem}
-              onPress={() => router.navigate("/(cust)/tabs/custhome")}
+              onPress={() => router.navigate("/(cust)/category")}
             >
               <Text style={styles.menuText}>카테고리 설정</Text>
               <Ionicons name="chevron-forward" size={24} color="black" />
@@ -81,7 +81,7 @@ export default function Mypage() {
             <Text style={styles.sectionTitle}>히스토리</Text>
             <TouchableOpacity
               style={styles.menuItem}
-              onPress={() => router.navigate("/(cust)/purchase")}
+              onPress={() => router.navigate("/(cust)/orderList")}
             >
               <Text style={styles.menuText}>구매내역</Text>
               <Ionicons name="chevron-forward" size={24} color="black" />
@@ -120,7 +120,7 @@ export default function Mypage() {
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.menuItem}
-              onPress={() => router.navigate("/(cust)/tabs/custhome")}
+              onPress={() => router.navigate("/(cust)/report")}
             >
               <Text style={styles.menuText}>신고</Text>
               <Ionicons name="chevron-forward" size={24} color="black" />

@@ -3,7 +3,7 @@ import { router } from 'expo-router';
 import { useState } from 'react';
 import { Modal, Pressable, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { styles } from './myinfo.styles';
+import { styles } from './my-info.styles';
 
 export default function MyInfoScreen() {
     const [gender, setGender] = useState('male');

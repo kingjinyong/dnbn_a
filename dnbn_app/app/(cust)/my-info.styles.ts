@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-container: {
+    container: {
         flex: 1,
         backgroundColor: '#ffffffff',
     },
@@ -32,7 +32,6 @@ container: {
     },
     myInfoContainer: {
         flex: 1,
-        paddingLeft: 10
     },
     headerContainer: {
         flexDirection: 'row',
@@ -180,7 +179,7 @@ container: {
         color: '#EF7810',
         marginBottom: 8,
     },
-    modalPasswordHint:{
+    modalPasswordHint: {
         fontSize: 16,
         color: '#999',
         marginTop: 6,
@@ -196,7 +195,7 @@ container: {
         color: '#919191ff',
         backgroundColor: '#fff',
     },
-    categoryText:{
+    categoryText: {
         fontSize: 18,
         marginBottom: 8,
     },
