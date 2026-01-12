@@ -57,7 +57,7 @@ export default function CustLayout() {
         }}
       />
       <Stack.Screen
-        name="myInfo"
+        name="my-info"
         options={{
           title: "내 정보 수정",
           headerShown: false,
