@@ -58,7 +58,6 @@ export default function StoreNego() {
         <View style={styles.placeholder} />
       </View>
 
-      <View>
         <View style={styles.tabContainer}>
           <TouchableOpacity style={activeTab === "list" ? styles.tabButtonActive : styles.tabButton} onPress={() => {setActiveTab("list");
             router.setParams({ tab: undefined });
@@ -69,12 +68,12 @@ export default function StoreNego() {
             <Text style={activeTab === "request" ? styles.tabButtonTextActive : styles.tabButtonText}>요청</Text>
           </TouchableOpacity>
         </View>
-      </View>
 
       {activeTab === "list" ? (
         <FlatList
           data={negoList}
           keyExtractor={item => item.id}
+          showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
             <View style={styles.negoProduct}>
               <View style={styles.productContainer}>
@@ -108,7 +107,8 @@ export default function StoreNego() {
               </View>
     
               <View style={styles.detailButtonContainer}>
-                <TouchableOpacity style={styles.detailButton}>
+                <TouchableOpacity style={styles.detailButton}
+                  onPress={() => router.navigate("/(store)/detailnego")}>
                   <Text style={styles.detailButtonText}>상세</Text>
                 </TouchableOpacity>
               </View>
@@ -119,6 +119,7 @@ export default function StoreNego() {
           <FlatList
             data={negoRequest}
             keyExtractor={item => item.id}
+            showsVerticalScrollIndicator={false}
             renderItem={({ item }) => (
               <View style={styles.negoRequestProduct}>
                 <View style={styles.negoRequestProductContainer}>

@@ -72,6 +72,7 @@ export default function StoreSale() {
       <FlatList
         data={saleList}
         keyExtractor={item => item.id}
+        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <View style={styles.saleProduct}>
             <View style={styles.productContainer}>
