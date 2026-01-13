@@ -19,6 +19,12 @@ export default function StoreProducts() {
   const [discountValue, setDiscountValue] = useState('');
   const [currentProductPrice, setCurrentProductPrice] = useState(10000); // 예시로 현재 상품 가격
   const [discountDurationHours, setDiscountDurationHours] = useState(24); // DB에서 가져온 할인 기간(시간)
+  
+  // 네고 모달용 state
+  const [showNegoDatePicker, setShowNegoDatePicker] = useState(false);
+  const [showNegoTimePicker, setShowNegoTimePicker] = useState(false);
+  const [negoStartDate, setNegoStartDate] = useState(new Date());
+  const [negoDurationHours, setNegoDurationHours] = useState(24); // DB에서 가져온 네고 기간(시간)
 
   const products = [
     { id: "1", uri: require("@/assets/images/image1.jpg"), name: "상품 1", price: 10000, categoryName: "카테고리 1"},
@@ -52,7 +58,9 @@ export default function StoreProducts() {
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
-          paddingBottom: Platform.OS === 'ios' ? insets.bottom + 60 : 0
+          paddingBottom: Platform.OS === 'ios' ? insets.bottom + 60 : 0,
+          paddingHorizontal: 16,
+          paddingTop: 8,
         }}
         renderItem={({ item: products }) => (
           <View style={styles.content}>
@@ -62,8 +70,10 @@ export default function StoreProducts() {
                   <Image source={products.uri} style={styles.productImage} resizeMode="cover"/>
                 </View>
                 <View style={styles.productInfoContainer}>
-                  <Text style={styles.categoryName}>{products.categoryName}</Text>
-                  <Text style={styles.productName}>{products.name}</Text>
+                  <View style={styles.categoryTag}>
+                    <Text style={styles.categoryName}>{products.categoryName}</Text>
+                  </View>
+                  <Text style={styles.productName} numberOfLines={2}>{products.name}</Text>
                   <Text style={styles.price}>
                     {products.price.toLocaleString()}원
                   </Text>
@@ -73,10 +83,12 @@ export default function StoreProducts() {
             <View style={styles.productButtonContainer}>
               <TouchableOpacity style={styles.saleButton}
               onPress={() => setSaleModal(true)}>
+                <Ionicons name="pricetag-outline" size={16} color="#EF7810" />
                 <Text style={styles.saleButtonText}>할인 등록</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.negoButton}
               onPress={() => setNegoModal(true)}>
+                <Ionicons name="chatbubble-outline" size={16} color="#4B5563" />
                 <Text style={styles.negoButtonText}>네고 등록</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.moreButton}
@@ -85,7 +97,7 @@ export default function StoreProducts() {
                 setSelectedProductCode(products.id);
                 setDetailModal(true);
               }}>
-                <Text><Ionicons name="ellipsis-horizontal" size={20} color="#666" /></Text>
+                <Ionicons name="ellipsis-horizontal" size={20} color="#6B7280" />
               </TouchableOpacity>
             </View>
           </View>
@@ -342,14 +354,93 @@ export default function StoreProducts() {
         animationType="fade"
         onRequestClose={() => setNegoModal(false)}
       >
-        <View style={styles.modalOverlay}>
-          <View style={styles.negoModalContent}>
-            <Text>네고 등록</Text>
-            <Text>
-              네고 등록 모달 내용이 여기에 들어갑니다.
-            </Text>
+        <TouchableOpacity 
+          style={styles.modalOverlay}
+          activeOpacity={1}
+          onPress={() => setNegoModal(false)}
+        >
+          <View style={styles.saleModalWrapper}>
+            <TouchableOpacity 
+              activeOpacity={1}
+              onPress={(e) => e.stopPropagation()}
+              style={styles.saleModalContent}
+            >
+              <View style={styles.saleModalHeader}>
+                <Text style={styles.saleModalTitle}>네고 등록</Text>
+              </View>
+
+              <View style={styles.saleInputGroup}>
+                <Text style={styles.saleLabel}>네고 시작 시간</Text>
+                <TouchableOpacity 
+                  style={styles.saleDateButton}
+                  onPress={() => setShowNegoDatePicker(true)}
+                >
+                  <Ionicons name="calendar-outline" size={20} color="#ef7810" />
+                  <Text style={styles.saleDateText}>
+                    {negoStartDate.toLocaleDateString('ko-KR')} {negoStartDate.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}
+                  </Text>
+                </TouchableOpacity>
+                
+                {showNegoDatePicker && (
+                  <DateTimePicker
+                    value={negoStartDate}
+                    mode="date"
+                    display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+                    onChange={(event, selectedDate) => {
+                      setShowNegoDatePicker(Platform.OS === 'ios');
+                      if (selectedDate) {
+                        setNegoStartDate(selectedDate);
+                        if (Platform.OS !== 'ios') {
+                          setShowNegoTimePicker(true);
+                        }
+                      }
+                    }}
+                  />
+                )}
+                
+                {showNegoTimePicker && (
+                  <DateTimePicker
+                    value={negoStartDate}
+                    mode="time"
+                    display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+                    onChange={(event, selectedDate) => {
+                      setShowNegoTimePicker(Platform.OS === 'ios');
+                      if (selectedDate) {
+                        setNegoStartDate(selectedDate);
+                      }
+                    }}
+                  />
+                )}
+              </View>
+
+              <View style={styles.saleInputGroup}>
+                <Text style={styles.saleLabel}>네고 종료일시</Text>
+                <View style={[styles.saleInput, styles.saleInputDisabled]}>
+                  <Text style={styles.saleInputDisabledText}>
+                    {(() => {
+                      const endDate = new Date(negoStartDate);
+                      endDate.setHours(endDate.getHours() + negoDurationHours);
+                      return `${endDate.toLocaleDateString('ko-KR')} ${endDate.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}`;
+                    })()}
+                  </Text>
+                </View>
+                <Text style={styles.saleHelpText}>시작 시간으로부터 {negoDurationHours}시간 후 자동 종료</Text>
+              </View>
+
+              <View style={styles.saleModalButtons}>
+                <TouchableOpacity style={styles.saleConfirmButton}>
+                  <Text style={styles.saleConfirmButtonText}>등록</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                  style={styles.saleCancelButton}
+                  onPress={() => setNegoModal(false)}
+                >
+                  <Text style={styles.saleCancelButtonText}>취소</Text>
+                </TouchableOpacity>
+              </View>
+            </TouchableOpacity>
           </View>
-        </View>
+        </TouchableOpacity>
       </Modal>
     </View>
   );
