@@ -83,6 +83,7 @@ export default function StoreSale() {
         contentContainerStyle={{ paddingBottom: Platform.OS === 'ios' ? insets.bottom + 60 : 0 }}
         data={saleList}
         keyExtractor={item => item.id}
+        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <View style={styles.saleProduct}>
             <View style={styles.productContainer}>
