@@ -47,11 +47,7 @@ export const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 12,
     alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    elevation: 3,
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
   },
   statNumber: {
     fontSize: 28,
@@ -65,7 +61,6 @@ export const styles = StyleSheet.create({
   },
   quickMenu: {
     marginTop: 8,
-    flex: 1,
   },
   sectionTitle: {
     fontSize: 18,
@@ -79,18 +74,14 @@ export const styles = StyleSheet.create({
     gap: 12,
   },
   menuItem: {
-    height: "40%",
+    height: 150,
     width: "48%",
     justifyContent: "center",
     backgroundColor: "#fff",
     padding: 20,
     borderRadius: 12,
     alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    elevation: 3,
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
   },
   menuText: {
     fontSize: 14,

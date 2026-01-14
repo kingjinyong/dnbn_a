@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useState } from "react";
-import { FlatList, Image, Modal, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, Image, Modal, Platform, Text, TouchableOpacity, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { styles } from "./storenego.styles";
 
@@ -64,6 +64,7 @@ export default function StoreNego() {
 
       {activeTab === "list" ? (
         <FlatList
+          contentContainerStyle={{ paddingBottom: Platform.OS === 'ios' ? insets.bottom + 60 : 0 }}
           data={negoList}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
@@ -108,6 +109,7 @@ export default function StoreNego() {
         ></FlatList>
       ) : (
           <FlatList
+            contentContainerStyle={{ paddingBottom: Platform.OS === 'ios' ? insets.bottom + 60 : 0 }}
             data={negoRequest}
             keyExtractor={item => item.id}
             renderItem={({ item }) => (
