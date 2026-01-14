@@ -52,7 +52,7 @@ export default function StoreHome() {
             <View style={styles.menuGrid}>
               <TouchableOpacity
                 style={styles.menuItem}
-                onPress={() => router.push("/(store)/tabs/storeproducts")}
+                onPress={() => router.push("/(store)/addproduct")}
               >
                 <Ionicons name="duplicate-outline" size={28} color="#FF9500" />
                 <Text style={styles.menuText}>상품 등록</Text>
@@ -60,7 +60,7 @@ export default function StoreHome() {
 
               <TouchableOpacity
                 style={styles.menuItem}
-                onPress={() => router.push("/(store)/tabs/storeproducts")}
+                onPress={() => router.navigate("/(store)/tabs/storenego?tab=request")}
               >
                 <Ionicons name="chatbox-ellipses-outline" size={28} color="#FF9500" />
                 <Text style={styles.menuText}>네고 요청</Text>
@@ -76,7 +76,7 @@ export default function StoreHome() {
               
               <TouchableOpacity
                 style={styles.menuItem}
-                onPress={() => router.push("/(cust)/tabs/custhome")}
+                onPress={() => router.push("/(store)/storestatistic")}
               >
                 <Ionicons name="bar-chart-outline" size={28} color="#FF9500" />
                 <Text style={styles.menuText}>매출 통계</Text>
