@@ -58,16 +58,13 @@ export default function StoreMypage() {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>히스토리</Text>
             <TouchableOpacity style={styles.menuItem}>
-              <Text style={styles.menuText}>리뷰</Text>
-              <Ionicons name="chevron-forward" size={24} color="#666" />
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.menuItem}>
               <Text style={styles.menuText}>할인</Text>
               <Ionicons name="chevron-forward" size={24} color="#666" />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.menuItem}>
+            <TouchableOpacity
+              style={styles.menuItem}
+              onPress={() => router.push("/(store)/nego-history")}>
               <Text style={styles.menuText}>네고</Text>
               <Ionicons name="chevron-forward" size={24} color="#666" />
             </TouchableOpacity>
