@@ -17,25 +17,86 @@ export default function FaqListScreen() {
   const scrollViewRef = useRef<ScrollView>(null);
   const [selectedSubject, setSelectedSubject] = useState("주문/결제");
 
+  
   const faqData = [
     {
-      subject: "주문/결제",
-      items: [
-        { question: "Q. 주문은 어떻게 하나요?" },
-        { question: "Q. 결제 수단에는 어떤 것이 있나요?" },
-      ],
+      faqType: "요금제",
+      faqList: [
+        {
+          faqTitle: "1",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "2",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "3",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "4",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "5",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "6",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "질문",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "질문",
+          faqContent: "답변"
+        }
+      ]
     },
     {
-      subject: "배송",
-      items: [
-        { question: "Q. 배송은 얼마나 걸리나요?" },
-        { question: "Q. 배송지 변경은 어떻게 하나요?" },
-      ],
-    },
+      faqType: "서비스",
+      faqList: [
+        {
+          faqTitle: "질문",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "2",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "질문",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "3",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "4",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "질문",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "질문",
+          faqContent: "답변"
+        },
+        {
+          faqTitle: "질문",
+          faqContent: "답변"
+        }
+      ]
+    }
   ];
 
   const currentFaqItems =
-    faqData.find((faq) => faq.subject === selectedSubject)?.items || [];
+    faqData.find((faq) => faq.faqType === selectedSubject)?.faqList || [];
 
   return (
     <View style={styles.container}>
