@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { styles } from "./wishlist.styles";
 
 export default function WishlistScreen() {
-    const insets = useSafeAreaInsets();
+  const insets = useSafeAreaInsets();
 
     const storeList = [
         { id: '1', uri: require('@/assets/images/logo.png'), storeName: '족발집', rating: 4.8, reviewCount: 120, category: '음식점', businessType: '일반음식점', address: '서울시 강남구', totalProducts: 34 },
