@@ -1,4 +1,3 @@
-import { store } from "expo-router/build/global-state/router-store";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -37,6 +36,9 @@ export const styles = StyleSheet.create({
     },
     placeholder: {
         width: 40,
+    },
+    wishlistContainer: {
+        flex: 1,
     },
     centertitle: {
         fontSize: 20,
