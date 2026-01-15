@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
-import { Modal, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, Modal, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { styles } from "./editmyinfo.styles";
 import { useState } from "react";
@@ -19,6 +19,10 @@ export default function EditMyInfoScreen() {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [passwordChangeSuccess, setPasswordChangeSuccess] = useState(true);
+
+    // 회원탈퇴 비밀번호 확인 모달
+    const [withdrawPasswordModalVisible, setWithdrawPasswordModalVisible] = useState(false);
+    const [withdrawPassword, setWithdrawPassword] = useState('');
 
     const handleVerifyPassword = () => {
         if (currentPassword === "") {
@@ -48,6 +52,21 @@ export default function EditMyInfoScreen() {
         setNewPassword("");
         setConfirmPassword("");
         setPasswordChangeSuccess(false);
+    };
+
+    const handleWithdrawClick = () => {
+        setWithdrawPasswordModalVisible(true);
+    };
+
+    const handleWithdrawPasswordSubmit = () => {
+        if (!withdrawPassword.trim()) {
+            Alert.alert('입력 오류', '비밀번호를 입력해주세요.');
+            return;
+        }
+        // TODO: API를 통해 비밀번호 검증
+        setWithdrawPasswordModalVisible(false);
+        setWithdrawPassword('');
+        router.push('/(cust)/Withdraw');
     };
 
     const handleUpdate = () => {
@@ -151,6 +170,12 @@ export default function EditMyInfoScreen() {
                 <TouchableOpacity style={styles.submitButton} onPress={handleUpdate}>
                     <Text style={styles.submitButtonText}>수정 완료</Text>
                 </TouchableOpacity>
+
+                <View style={styles.WithdrawContainer}>
+                    <TouchableOpacity onPress={handleWithdrawClick}>
+                        <Text style={styles.WithdrawText}>회원 탈퇴</Text>
+                    </TouchableOpacity>
+                </View>
             </ScrollView>
 
             {/* 비밀번호 변경 모달 */}
@@ -287,6 +312,54 @@ export default function EditMyInfoScreen() {
                                 </TouchableOpacity>
                             </>
                         )}
+                    </View>
+                </View>
+            </Modal>
+
+            {/* 회원탈퇴 비밀번호 확인 모달 */}
+            <Modal
+                visible={withdrawPasswordModalVisible}
+                transparent
+                animationType="fade"
+                onRequestClose={() => setWithdrawPasswordModalVisible(false)}
+            >
+                <View style={styles.modalOverlay}>
+                    <View style={styles.passwordModal}>
+                        <View style={styles.modalHeader}>
+                            <Text style={styles.modalTitle}>비밀번호 확인</Text>
+                        </View>
+
+                        <View style={styles.modalContent}>
+                            <Text style={styles.modalDescription}>
+                                회원 탈퇴를 위해 비밀번호를 입력해주세요.
+                            </Text>
+                            <TextInput
+                                style={styles.passwordInput}
+                                placeholder="비밀번호"
+                                placeholderTextColor="#ccc"
+                                value={withdrawPassword}
+                                onChangeText={setWithdrawPassword}
+                                secureTextEntry
+                            />
+                        </View>
+
+                        <View style={styles.modalButtonContainer}>
+                            <TouchableOpacity
+                                style={styles.modalSubmitButton}
+                                onPress={handleWithdrawPasswordSubmit}
+                            >
+                                <Text style={styles.modalSubmitButtonText}>확인</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={styles.modalCancelButton}
+                                onPress={() => {
+                                    setWithdrawPasswordModalVisible(false);
+                                    setWithdrawPassword('');
+                                }}
+                            >
+                                <Text style={styles.modalCancelButtonText}>취소</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
             </Modal>

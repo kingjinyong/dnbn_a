@@ -105,7 +105,7 @@ export const styles = StyleSheet.create({
         padding: 16,
         alignItems: 'center',
         marginTop: 8,
-        marginBottom: 40,
+        marginBottom: 15,
     },
     submitButtonText: {
         color: '#fff',
@@ -243,5 +243,55 @@ export const styles = StyleSheet.create({
     },
     genderButtonTextActive: {
         color: '#fff',
+    },
+    WithdrawContainer: {
+        alignItems: 'flex-end',
+    },
+    WithdrawText: {
+        fontSize: 14,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        paddingHorizontal: 12,
+        paddingVertical: 8,
+        borderRadius: 8,
+        color: '#ccc',
+        fontWeight: '600',
+    },
+    passwordModal: {
+        backgroundColor: "#fff",
+        borderRadius: 8,
+        width: "80%",
+        paddingTop: 20,
+        paddingHorizontal: 20,
+    },
+    modalContent: {
+        marginBottom: 20,
+    },
+    passwordInput: {
+        borderWidth: 1,
+        borderColor: "#ddd",
+        borderRadius: 4,
+        paddingHorizontal: 12,
+        paddingVertical: 10,
+        fontSize: 14,
+        color: "#000",
+    },
+    modalButtonContainer: {
+        flexDirection: "row",
+        gap: 8,
+        paddingBottom: 20,
+    },
+    modalSubmitButton: {
+        flex: 1,
+        backgroundColor: "#EF7810",
+        borderRadius: 4,
+        paddingVertical: 10,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    modalSubmitButtonText: {
+        fontSize: 14,
+        fontWeight: "600",
+        color: "#fff",
     },
 });
