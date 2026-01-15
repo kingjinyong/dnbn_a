@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ffffff',
+        backgroundColor: '#f8f8f8',
     },
     header: {
         flexDirection: 'row',
@@ -31,31 +31,25 @@ export const styles = StyleSheet.create({
     placeholder: {
         width: 40,
     },
-    myInfoContainer: {
-        flex: 1,
-    },
-    headerContainer: {
+    editButton: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingHorizontal: 16,
-        paddingVertical: 12,
+        justifyContent: 'center',
+        gap: 4,
         backgroundColor: '#fff',
-        borderBottomWidth: 1,
-        borderBottomColor: '#f0f0f0',
+        paddingHorizontal: 12,
+        paddingVertical: 8,
+        borderRadius: 8,
+        borderWidth: 1,
+        borderColor: '#EF7810',
     },
-    headerBackButton: {
-        paddingRight: 12,
-    },
-    headerBackButtonText: {
-        fontSize: 24,
-        color: '#000',
-    },
-    headerTitle: {
-        fontSize: 18,
+    editText: {
+        fontSize: 14,
+        color: '#EF7810',
         fontWeight: '700',
-        color: '#000',
+    },
+    myInfoContainer: {
         flex: 1,
-        textAlign: 'center',
     },
     myInfoItemContainer: {
         paddingHorizontal: 16,
@@ -63,93 +57,115 @@ export const styles = StyleSheet.create({
         backgroundColor: '#fff',
         marginVertical: 1,
     },
+    myInfoContentContainer: {
+        padding: 20,
+        gap: 5,
+    },
+    sectionCard: {
+        backgroundColor: '#fff',
+        borderRadius: 12,
+        padding: 16,
+        marginBottom: 8,
+        borderWidth: 1,
+        borderColor: '#f0f0f0',
+    },
+    sectionInfoHeader:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+    },
+    sectionHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 16,
+        gap: 8,
+    },
+    sectionTitleContainer:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+    },
+    sectionTitle: {
+        fontSize: 18,
+        fontWeight: '600',
+        color: '#EF7810',
+    },
+    infoContainer: {
+        gap: 12,
+    },
+    infoRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingVertical: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: '#f0f0f0',
+    },
+    infoLabel: {
+        fontSize: 16,
+        color: '#666',
+        fontWeight: '500',
+    },
+    infoValue: {
+        fontSize: 16,
+        color: '#333',
+        fontWeight: '500',
+    },
+    socialButtonRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: 12,
+        gap: 12,
+        borderBottomWidth: 1,
+        borderBottomColor: '#f0f0f0',
+    },
+    socialButtonText: {
+        fontSize: 16,
+        color: '#333',
+        fontWeight: '500',
+    },
     myInfoItemText: {
         fontSize: 20,
         color: '#EF7810',
         marginBottom: 8,
     },
-    myInfoInputContainer: {
+    myInfoSocialContainer: {
         flexDirection: 'row',
-        alignItems: 'center',
-        gap: 10,
+        gap: 12,
     },
-    myInfoTextInput: {
-        flex: 1,
-        borderWidth: 1,
-        borderColor: '#f0f0f0',
-        borderRadius: 6,
-        paddingHorizontal: 12,
-        paddingVertical: 10,
-        fontSize: 18,
-        color: '#919191ff',
-        backgroundColor: '#fff',
-    },
-    myInfoPwChangeButton: {
-        paddingVertical: 10,
-        paddingHorizontal: 14,
-        borderWidth: 1,
-        borderColor: '#EF7810',
-        backgroundColor: '#fff',
-        borderRadius: 6,
-    },
-    myInfoPwChangeButtonText: {
-        fontSize: 18,
-        color: '#EF7810',
-    },
-    myInfoVerifyButton: {
-        paddingVertical: 10,
-        paddingHorizontal: 14,
-        borderWidth: 1,
-        borderColor: '#EF7810',
-        backgroundColor: '#fff',
-        borderRadius: 6,
-    },
-    myInfoVerifyButtonText: {
-        fontSize: 18,
-        color: '#EF7810',
-    },
-    myInfoRadioContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: 20,
-        marginTop: 10,
-    },
-    myInfoRadioButton: {
+    myInfoSocialButton: {
         flexDirection: 'row',
         alignItems: 'center',
         gap: 8,
     },
-    myInfoRadioButtonCircle: {
-        width: 16,
-        height: 16,
-        borderRadius: 8,
-        borderWidth: 2,
-        borderColor: '#d0d0d0',
+    myInfoSocialButtonText: {
+        fontSize: 16,
+        color: '#333',
     },
-    myInfoRadioButtonCircleActive: {
-        width: 16,
-        height: 16,
-        borderRadius: 8,
-        backgroundColor: '#000',
+    myInfoTextContainer: {
+        gap: 10,
     },
-    myInfoRadioButtonText: {
-        fontSize: 18,
-        color: '#5b5b5bff',
+    giftinfoContainer: {
+        gap: 12,
+        flexDirection: 'row',
     },
-    myInfoSaveButton: {
-        marginHorizontal: 16,
-        marginVertical: 20,
-        paddingVertical: 14,
-        borderWidth: 1,
-        borderColor: '#EF7810',
-        backgroundColor: '#ffffff',
-        borderRadius: 6,
+    giftImage: {
+        width: 80,
+        height: 80,
+        marginBottom: 8,
+    },
+    giftBox: {
+        padding: 5,
+        justifyContent: 'center',
         alignItems: 'center',
     },
-    myInfoSaveButtonText: {
-        fontSize: 20,
-        color: '#EF7810',
-        fontWeight: '600',
+    myInfoText: {
+        flex: 1,
+        paddingHorizontal: 12,
+        paddingVertical: 10,
+        fontSize: 18,
+        color: 'rgb(0, 0, 0)',
+        backgroundColor: '#fff',
     },
     modalOverlay: {
         flex: 1,
@@ -176,7 +192,8 @@ export const styles = StyleSheet.create({
         marginBottom: 18,
     },
     modalText: {
-        fontSize: 18,
+        fontSize: 16,
+        fontWeight: 'bold',
         color: '#EF7810',
         marginBottom: 8,
     },
@@ -195,10 +212,6 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         color: '#919191ff',
         backgroundColor: '#fff',
-    },
-    categoryText: {
-        fontSize: 18,
-        marginBottom: 8,
     },
     modalButtonContainer: {
         flexDirection: 'row',
@@ -231,5 +244,82 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: '600',
         color: '#EF7810',
+    },
+    securityButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: 12,
+        gap: 12,
+        borderBottomWidth: 1,
+        borderBottomColor: '#f0f0f0',
+    },
+    securityButtonText: {
+        fontSize: 16,
+        color: '#333',
+        fontWeight: '500',
+    },
+    modalContainer: {
+        backgroundColor: '#fff',
+        borderRadius: 12,
+        paddingHorizontal: 24,
+        paddingVertical: 28,
+        width: '85%',
+        maxWidth: 400,
+    },
+    modalHeader: {
+        alignItems: 'center',
+        marginBottom: 20,
+        gap: 12,
+    },
+    modalLabel: {
+        fontSize: 16,
+        color: '#EF7810',
+        marginBottom: 8,
+        fontWeight: '500',
+    },
+    modalDescription: {
+        fontSize: 16,
+        color: '#666',
+        marginBottom: 20,
+        textAlign: 'center',
+        lineHeight: 22,
+    },
+    modalInputGroup: {
+        marginBottom: 16,
+    },
+    modalInput: {
+        borderWidth: 1,
+        borderColor: '#e0e0e0',
+        borderRadius: 6,
+        paddingHorizontal: 12,
+        paddingVertical: 10,
+        fontSize: 16,
+        color: '#333',
+    },
+    modalButtons: {
+        flexDirection: 'row',
+        gap: 12,
+        marginTop: 24,
+    },
+    modalResultTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#333',
+        textAlign: 'center',
+        marginBottom: 12,
+    },
+    modalSingleButton: {
+        marginTop: 24,
+        paddingVertical: 12,
+        borderColor: '#EF7810',
+        backgroundColor: '#EF7810',
+        borderWidth: 1,
+        borderRadius: 6,
+        alignItems: 'center',
+    },
+    modalSingleButtonText: {
+        fontSize: 18,
+        fontWeight: '600',
+        color: '#fff',
     },
 });

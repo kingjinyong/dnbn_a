@@ -1,17 +1,15 @@
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { useState } from 'react';
-import { Modal, Pressable, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, Modal, Pressable, ScrollView, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { styles } from './my-info.styles';
 
 export default function MyInfoScreen() {
-    const [gender, setGender] = useState('male');
     const [pwModalVisible, setPwModalVisible] = useState(false);
     const [currentPassword, setCurrentPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [categoryModalVisible, setCategoryModalVisible] = useState(false);
     const insets = useSafeAreaInsets();
 
     return (
@@ -29,61 +27,116 @@ export default function MyInfoScreen() {
                 <Text style={styles.title}>
                     내 정보
                 </Text>
-                <View style={styles.placeholder} />
+
+                <TouchableOpacity
+                    style={styles.editButton}
+                    onPress={() => router.push("/(cust)/EditMyInfo")}
+                >
+                    <Ionicons name="create-outline" size={20} color="#EF7810" />
+                    <Text style={styles.editText}>수정</Text>
+                </TouchableOpacity>
             </View>
 
+            <ScrollView style={styles.myInfoContainer} showsVerticalScrollIndicator={false}>
+                <View style={styles.myInfoContentContainer}>
 
-            <ScrollView>
-                <View style={styles.myInfoContainer}>
-                    {/* 아이디 */}
-                    <View style={styles.myInfoItemContainer}>
-                        <Text style={styles.myInfoItemText}>아이디</Text>
-                        <View style={styles.myInfoInputContainer}>
-                            <TextInput style={styles.myInfoTextInput} placeholder='abc123'></TextInput>
-                            <Pressable style={styles.myInfoPwChangeButton} onPress={() => setPwModalVisible(true)}>
-                                <Text style={styles.myInfoPwChangeButtonText}>비밀번호 변경</Text>
-                            </Pressable>
+                    {/* 내 정보 */}
+                    <View style={styles.sectionCard}>
+                        <View style={styles.sectionInfoHeader}>
+                            <Ionicons name="person" size={22} color="#EF7810" />
+                            <Text style={styles.sectionTitle}>내 정보</Text>
+                        </View>
+
+                        <View style={styles.infoContainer}>
+                            <View style={styles.infoRow}>
+                                <Text style={styles.infoLabel}>이름</Text>
+                                <Text style={styles.infoValue}>김철수</Text>
+                            </View>
+
+                            <View style={styles.infoRow}>
+                                <Text style={styles.infoLabel}>전화번호</Text>
+                                <Text style={styles.infoValue}>010-1234-5678</Text>
+                            </View>
+
+                            <View style={styles.infoRow}>
+                                <Text style={styles.infoLabel}>성별</Text>
+                                <Text style={styles.infoValue}>남성</Text>
+                            </View>
                         </View>
                     </View>
 
-                    {/* 이름(닉네임) */}
-                    <View style={styles.myInfoItemContainer}>
-                        <Text style={styles.myInfoItemText}>이름 (닉네임)</Text>
-                        <TextInput style={styles.myInfoTextInput} placeholder='홍길동'></TextInput>
-                    </View>
-
-                    {/* 휴대전화 */}
-                    <View style={styles.myInfoItemContainer}>
-                        <Text style={styles.myInfoItemText}>휴대전화</Text>
-                        <View style={styles.myInfoInputContainer}>
-                            <TextInput style={styles.myInfoTextInput} placeholder='휴대전화 번호 입력'></TextInput>
-                            <Pressable style={styles.myInfoVerifyButton}>
-                                <Text style={styles.myInfoVerifyButtonText}>본인 인증</Text>
-                            </Pressable>
+                    {/*결제 정보 */}
+                    <View style={styles.sectionCard}>
+                        <View style={styles.sectionHeader}>
+                            <View style={styles.sectionTitleContainer}>
+                                <Ionicons name="card" size={22} color="#EF7810" />
+                                <Text style={styles.sectionTitle}>결제 정보</Text>
+                            </View>
+                            <TouchableOpacity onPress={() => router.push("/(cust)/PaymentList")}>
+                                <Ionicons name="chevron-forward" size={20} color="#EF7810" />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.infoContainer}>
+                            <View style={styles.infoRow}>
+                                <Text style={styles.infoLabel}>카드 종류</Text>
+                                <Text style={styles.infoValue}>신용카드/신용카드/계좌이체</Text>
+                            </View>
+                            <View style={styles.infoRow}>
+                                <Text style={styles.infoLabel}>카드 번호</Text>
+                                <Text style={styles.infoValue}>**** **** **** 1234</Text>
+                            </View>
                         </View>
                     </View>
 
-                    {/* 성별 */}
-                    <View style={styles.myInfoItemContainer}>
-                        <Text style={styles.myInfoItemText}>성별</Text>
-                        <View style={styles.myInfoRadioContainer}>
-                            <Pressable style={styles.myInfoRadioButton} onPress={() => setGender('male')}>
-                                <View style={[styles.myInfoRadioButtonCircle, gender === 'male' && styles.myInfoRadioButtonCircleActive]} />
-                                <Text style={styles.myInfoRadioButtonText}>남성</Text>
-                            </Pressable>
-                            <Pressable style={styles.myInfoRadioButton} onPress={() => setGender('female')}>
-                                <View style={[styles.myInfoRadioButtonCircle, gender === 'female' && styles.myInfoRadioButtonCircleActive]} />
-                                <Text style={styles.myInfoRadioButtonText}>여성</Text>
-                            </Pressable>
+                    {/* 내 위치 */}
+                    <View style={styles.sectionCard}>
+                        <View style={styles.sectionHeader}>
+                            <View style={styles.sectionTitleContainer}>
+                                <Ionicons name="location" size={22} color="#EF7810" />
+                                <Text style={styles.sectionTitle}>내 위치</Text>
+                            </View>
+                            <TouchableOpacity onPress={() => router.push("/(cust)/address")}>
+                                <Ionicons name="chevron-forward" size={20} color="#EF7810" />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.infoContainer}>
+                            <View style={styles.infoRow}>
+                                <Text style={styles.infoLabel}>위치 이름</Text>
+                                <Text style={styles.infoValue}>서울특별시 중구 세종대로 110</Text>
+                            </View>
+                            <View style={styles.infoRow}>
+                                <Text style={styles.infoLabel}>위치 이름</Text>
+                                <Text style={styles.infoValue}>서울특별시 강남구 테헤란로 427</Text>
+                            </View>
+                        </View>
+                    </View>
+
+                    {/* 미수령상품 */}
+                    <View style={styles.sectionCard}>
+                        <View style={styles.sectionHeader}>
+                            <View style={styles.sectionTitleContainer}>
+                                <Ionicons name="cube" size={22} color="#EF7810" />
+                                <Text style={styles.sectionTitle}>미수령 상품</Text>
+                            </View>
+                            <TouchableOpacity onPress={() => router.push("/(cust)/gift-box")}>
+                                <Ionicons name="chevron-forward" size={20} color="#EF7810" />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.giftinfoContainer}>
+                            <View style={styles.giftBox}>
+                                <Image source={require('@/assets/images/qr.png')} style={styles.giftImage} resizeMode="contain" />
+                                <Text style={styles.infoValue}>2024-05-15</Text>
+                            </View>
+                            <View style={styles.giftBox}>
+                                <Image source={require('@/assets/images/image1.jpg')} style={styles.giftImage} resizeMode="contain" />
+                                <Text style={styles.infoValue}>2024-07-15</Text>
+                            </View>
                         </View>
                     </View>
                 </View>
             </ScrollView>
 
-            {/* 정보 수정하기 버튼 */}
-            <Pressable style={styles.myInfoSaveButton}>
-                <Text style={styles.myInfoSaveButtonText}>정보 수정하기</Text>
-            </Pressable>
+
 
             {/* 비밀번호 변경 모달 */}
             <Modal
@@ -156,32 +209,9 @@ export default function MyInfoScreen() {
                 </View>
             </Modal>
 
-            {/* 관심 카테고리 모달 */}
-            <Modal
-                visible={categoryModalVisible}
-                transparent={true}
-                animationType="fade"
-                onRequestClose={() => setCategoryModalVisible(false)}
-            >
-                <View style={styles.modalOverlay}>
-                    <View style={styles.modalContent}>
-                        <Text style={styles.modalTitle}>관심 카테고리 선택</Text>
-                        <Text style={styles.categoryText}>
-                            소매/잡화
-                        </Text>
-                        {/* 카테고리 선택 UI 구현 */}
-                        <Pressable
-                            style={styles.modalConfirmButton}
-                            onPress={() => setCategoryModalVisible(false)}
-                        >
-                            <Text style={styles.modalConfirmButtonText}>확인</Text>
-                        </Pressable>
-                    </View>
-                </View >
-            </Modal >
             {insets.bottom > 0 && (
-                <View style={{ height: insets.bottom, backgroundColor: '#000' }} />
+                <View style={{ height: insets.bottom, backgroundColor: "#000" }} />
             )}
-        </View >
+        </View>
     );
 }
