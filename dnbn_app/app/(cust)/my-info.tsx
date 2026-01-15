@@ -136,10 +136,7 @@ export default function MyInfoScreen() {
                 </View>
             </ScrollView>
 
-            {/* 하단 Safe Area - 색상 지정 가능 */}
-            {insets.bottom > 0 && (
-                <View style={{ height: insets.bottom, backgroundColor: '#000' }} />
-            )}
+
 
             {/* 비밀번호 변경 모달 */}
             <Modal
@@ -211,6 +208,10 @@ export default function MyInfoScreen() {
                     </View>
                 </View>
             </Modal>
+
+            {insets.bottom > 0 && (
+                <View style={{ height: insets.bottom, backgroundColor: "#000" }} />
+            )}
         </View>
     );
 }
