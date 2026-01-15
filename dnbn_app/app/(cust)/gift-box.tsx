@@ -348,7 +348,7 @@ export default function GiftBox() {
       <View style={styles.header}>
           <TouchableOpacity
           style={styles.backButton}
-          onPress={() => router.push('/tabs/mypage')}
+          onPress={() => router.back()}
           >
           <Ionicons name="chevron-back" size={24} color="#000" />
           </TouchableOpacity>

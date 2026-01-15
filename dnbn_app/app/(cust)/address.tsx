@@ -17,7 +17,7 @@ export default function AddressScreen() {
         <View style={{ height: insets.top, backgroundColor: "#FFFFFF"}} />
       )}
       <View style={styles.header}>
-        <TouchableOpacity style={styles.backButton} onPress={() => router.navigate("/(cust)/tabs/custhome")}>
+        <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
             <Ionicons name="chevron-back" size={24} color="#000" />
         </TouchableOpacity>
         <Text style={styles.title}>내 위치 설정</Text>
