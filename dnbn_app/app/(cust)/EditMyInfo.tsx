@@ -143,23 +143,34 @@ export default function EditMyInfoScreen() {
                         <Text style={styles.label}>성별</Text>
                         <View style={styles.genderContainer}>
                             <TouchableOpacity
-                                style={[
-                                    styles.genderButton,
-                                    gender === 'male' && styles.genderButtonActive,
-                                ]}
+                                style={styles.genderButton}
                                 onPress={() => setGender('male')}
                             >
-                                <Ionicons name="male" size={18} color={gender === 'male' ? '#fff' : '#EF7810'} />
-                                <Text style={[styles.genderButtonText, gender === 'male' && styles.genderButtonTextActive,]}>
+                                <View style={[
+                                    styles.genderRadioButton,
+                                    gender === 'male' && styles.genderRadioButtonActive,
+                                ]}>
+                                    {gender === 'male' && (
+                                        <View style={styles.genderRadioButtonInner} />
+                                    )}
+                                </View>
+                                <Text style={styles.genderButtonText}>
                                     남성
                                 </Text>
                             </TouchableOpacity>
                             <TouchableOpacity
-                                style={[styles.genderButton, gender === 'female' && styles.genderButtonActive,]}
+                                style={styles.genderButton}
                                 onPress={() => setGender('female')}
                             >
-                                <Ionicons name="female" size={18} color={gender === 'female' ? '#fff' : '#EF7810'} />
-                                <Text style={[styles.genderButtonText, gender === 'female' && styles.genderButtonTextActive,]}>
+                                <View style={[
+                                    styles.genderRadioButton,
+                                    gender === 'female' && styles.genderRadioButtonActive,
+                                ]}>
+                                    {gender === 'female' && (
+                                        <View style={styles.genderRadioButtonInner} />
+                                    )}
+                                </View>
+                                <Text style={styles.genderButtonText}>
                                     여성
                                 </Text>
                             </TouchableOpacity>
@@ -167,15 +178,19 @@ export default function EditMyInfoScreen() {
                     </View>
                 </View>
 
-                <TouchableOpacity style={styles.submitButton} onPress={handleUpdate}>
-                    <Text style={styles.submitButtonText}>수정 완료</Text>
-                </TouchableOpacity>
-
-                <View style={styles.WithdrawContainer}>
-                    <TouchableOpacity onPress={handleWithdrawClick}>
-                        <Text style={styles.WithdrawText}>회원 탈퇴</Text>
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity style={styles.submitButton} onPress={handleUpdate}>
+                        <Text style={styles.submitButtonText}>수정 완료</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
+                        <Text style={styles.backBtnText}>이전</Text>
                     </TouchableOpacity>
                 </View>
+
+
+                <TouchableOpacity style={styles.withdrawButton} onPress={handleWithdrawClick}>
+                    <Text style={styles.withdrawText}>회원 탈퇴</Text>
+                </TouchableOpacity>
             </ScrollView>
 
             {/* 비밀번호 변경 모달 */}

@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#f8f8f8",
+        backgroundColor: "#fff",
     },
     header: {
         flexDirection: "row",
@@ -40,6 +40,7 @@ export const styles = StyleSheet.create({
         borderRadius: 12,
         padding: 16,
         marginBottom: 16,
+        boxShadow: '0 0 4px rgba(0,0,0,0.2)',
     },
     sectionHeader: {
         flexDirection: 'row',
@@ -100,17 +101,43 @@ export const styles = StyleSheet.create({
         fontWeight: '600',
     },
     submitButton: {
+        flex: 1,
         backgroundColor: '#EF7810',
+        borderRadius: 8,
+        paddingVertical: 16,
+        alignItems: 'center',
+    },
+    submitButtonText: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: '600',
+    },
+    withdrawButton: {
+        borderColor: 'red',
+        borderWidth: 1,
         borderRadius: 8,
         padding: 16,
         alignItems: 'center',
         marginTop: 8,
         marginBottom: 15,
     },
-    submitButtonText: {
-        color: '#fff',
+    buttonContainer:{
+        flexDirection: 'row',
+        gap: 12,
+    },
+    backBtn:{
+        flex: 1,
+        borderWidth: 1,
+        borderColor: '#d0d0d0',
+        borderRadius: 8,
+        paddingVertical: 16,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    backBtnText:{
         fontSize: 16,
         fontWeight: '600',
+        color: '#666',
     },
     modalOverlay: {
         flex: 1,
@@ -216,45 +243,52 @@ export const styles = StyleSheet.create({
         color: '#fff',
     },
     genderContainer: {
-        flexDirection: 'row',
+        flexDirection: 'column',
         gap: 12,
     },
     genderButton: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
-        gap: 6,
-        paddingVertical: 12,
-        paddingHorizontal: 16,
-        borderWidth: 1,
-        borderColor: '#EF7810',
-        borderRadius: 8,
-        backgroundColor: '#fff',
+        paddingVertical: 14,
+        paddingHorizontal: 12,
+        borderWidth: 0,
+        borderRadius: 0,
+        backgroundColor: 'transparent',
+        gap: 10,
     },
     genderButtonActive: {
-        backgroundColor: '#EF7810',
-        borderColor: '#EF7810',
+        backgroundColor: 'transparent',
     },
     genderButtonText: {
         fontSize: 14,
-        fontWeight: '600',
-        color: '#EF7810',
+        fontWeight: '500',
+        color: '#333',
     },
     genderButtonTextActive: {
-        color: '#fff',
+        color: '#333',
     },
-    WithdrawContainer: {
-        alignItems: 'flex-end',
+    genderRadioButton: {
+        width: 20,
+        height: 20,
+        borderRadius: 10,
+        borderWidth: 2,
+        borderColor: '#ddd',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
-    WithdrawText: {
-        fontSize: 14,
-        borderWidth: 1,
-        borderColor: '#ccc',
-        paddingHorizontal: 12,
-        paddingVertical: 8,
-        borderRadius: 8,
-        color: '#ccc',
+    genderRadioButtonActive: {
+        borderColor: '#EF7810',
+    },
+    genderRadioButtonInner: {
+        width: 10,
+        height: 10,
+        borderRadius: 5,
+        backgroundColor: '#EF7810',
+    },
+    withdrawText: {
+        fontSize: 16,
+        color: 'red',
         fontWeight: '600',
     },
     passwordModal: {
